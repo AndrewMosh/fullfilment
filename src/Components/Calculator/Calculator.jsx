@@ -12,13 +12,23 @@ const Calculator = () => {
   const [total, setTotal] = useState(0);
   
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = (e, all) => {
     const checkbox = e.target;
     const price = parseFloat(checkbox.getAttribute('data-price'));
     if (checkbox.checked) {
-      setTotal((prevTotal) => (prevTotal + price));
+      if(all===true){
+        setTotal((prevTotal) => (price*boxQuantity)+prevTotal);
+      }else {
+        setTotal((prevTotal) => (prevTotal + price));
+      }
+      
     } else {
-      setTotal((prevTotal) => (prevTotal - price));
+      if(all===true){
+        setTotal((prevTotal) => prevTotal - (price * boxQuantity));
+      }else {
+        setTotal((prevTotal) => (prevTotal - price));
+      }
+      
     }
     console.log(total)
     console.log(boxQuantity)
@@ -58,7 +68,7 @@ useEffect(() => {
         } } /> <br />
 {PACKAGE.map((item) => (
   <label key={item.name}> 
-  <input type="checkbox" data-price={itemsQuantity>1000?item.to1000:itemsQuantity>1001 && itemsQuantity<2001?item.from1001:item.from2001}  onChange={handleCheckboxChange} /> {item.name} </label>
+  <input type="checkbox" data-price={itemsQuantity>1000?item.to1000:itemsQuantity>1001 && itemsQuantity<2001?item.from1001:item.from2001}  onChange={(e)=>handleCheckboxChange(e,item.all)} /> {item.name} </label>
 ))}
 
       <p>Итоговая стоимость: {total}</p>
