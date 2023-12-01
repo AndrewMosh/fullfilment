@@ -5,9 +5,9 @@ import { PACKAGE } from '../../utils/PACKAGe';
 
 const Calculator = () => {
   const [itemsQuantity, setItemsQuantity] = useState(0);
-  const [height, setHeight] = useState(60);
-  const [width, setWidth] = useState(40);
-  const [length, setLength] = useState(40);
+  const [height, setHeight] = useState('');
+  const [width, setWidth] = useState('');
+  const [length, setLength] = useState('');
   const [boxQuantity, setBoxQuantity] = useState(0);
   const [total, setTotal] = useState(0);
   
@@ -17,21 +17,18 @@ const Calculator = () => {
     const price = parseFloat(checkbox.getAttribute('data-price'));
     if (checkbox.checked) {
       if(all===true){
-        setTotal((prevTotal) => (price*boxQuantity)+prevTotal);
+        setTotal((prevTotal) => (price*itemsQuantity)+prevTotal);
       }else {
         setTotal((prevTotal) => (prevTotal + price));
       }
-      
     } else {
       if(all===true){
-        setTotal((prevTotal) => prevTotal - (price * boxQuantity));
+        setTotal((prevTotal) => prevTotal - (price * itemsQuantity));
       }else {
         setTotal((prevTotal) => (prevTotal - price));
       }
       
     }
-    console.log(total)
-    console.log(boxQuantity)
   };
 const pricePerBox= itemsQuantity<1000?160:itemsQuantity>1001 && itemsQuantity<2001?110:100
 
@@ -40,7 +37,6 @@ useEffect(() => {
   setBoxQuantity(() => calculateBoxes(height, length, width, itemsQuantity))
   setTotal( pricePerBox*boxQuantity)
 }, [height, width, length, itemsQuantity, boxQuantity, pricePerBox])
-
 
   return (
     <div>
@@ -61,7 +57,7 @@ useEffect(() => {
         <input placeholder="высота" type="number" id="height" value={height} onChange={(e) => setHeight(e.target.value)} />
         <input placeholder="ширина" type="number" id="width" value={width} onChange={(e) => setWidth(e.target.value)} />
         <input placeholder="длина" type="number" id="length" value={length} onChange={(e) => setLength(e.target.value)} />
-        <input  placeholder="количество коробок" type="number" id="quantity" value={itemsQuantity} onChange={(e) => {
+        <input  placeholder="количество единиц" type="number" id="quantity" value={itemsQuantity} onChange={(e) => {
             setItemsQuantity( e.target.value)
             setBoxQuantity(() => calculateBoxes(height, length, width, e.target.value))
             setTotal( pricePerBox*boxQuantity)
@@ -78,3 +74,6 @@ useEffect(() => {
 };
 
 export default Calculator;
+
+
+//проверка на брак каждую единицу или коробку?
