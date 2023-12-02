@@ -2,9 +2,7 @@ export function calculateBoxes(height, length, width, quantity) {
     const boxHeight = 60;
     const boxLength = 40;
     const boxWidth = 40;
-    let totalBoxes = 0;
-  
-    while (quantity > 0) {
+    let totalBoxes = height===60 && length===40 && width===40 ? 0: 1;
       const boxVolume = boxHeight * boxLength * boxWidth;
       const itemVolume = height * length * width;
   
@@ -13,7 +11,6 @@ export function calculateBoxes(height, length, width, quantity) {
   
       totalBoxes += boxesNeeded;
       quantity -= itemsInBox * boxesNeeded;
-    }
-  
+   
     return totalBoxes;
   }

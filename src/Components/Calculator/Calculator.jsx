@@ -4,12 +4,12 @@ import { PACKAGE } from '../../utils/PACKAGe';
  import { calculateBoxes } from '../../utils/CalculateBoxes';
 
 const Calculator = () => {
-  const [itemsQuantity, setItemsQuantity] = useState(0);
+  const [itemsQuantity, setItemsQuantity] = useState('');
   const [height, setHeight] = useState('');
   const [width, setWidth] = useState('');
-  const [length, setLength] = useState('');
-  const [boxQuantity, setBoxQuantity] = useState(0);
-  const [total, setTotal] = useState(0);
+  const [lengthBox, setLengthBox] = useState('');
+  const [boxQuantity, setBoxQuantity] = useState('');
+  const [total, setTotal] = useState('');
   
 
   const handleCheckboxChange = (e, all) => {
@@ -30,22 +30,21 @@ const Calculator = () => {
       
     }
   };
-const pricePerBox= itemsQuantity<1000?160:itemsQuantity>1001 && itemsQuantity<2001?110:100
-const handleQuantity = (e) => {
-  setItemsQuantity( e.target.value)
-            setBoxQuantity(() => calculateBoxes(height, length, width, e.target.value))
-            setTotal( pricePerBox*boxQuantity)
-}
+const pricePerBox= itemsQuantity<=1000?160:itemsQuantity>=1001 && itemsQuantity<=2001?110:100
+
 
 useEffect(() => {
-  setBoxQuantity(() => calculateBoxes(height, length, width, itemsQuantity))
-  setTotal( pricePerBox*boxQuantity)
-}, [height, width, length, itemsQuantity, boxQuantity, pricePerBox])
+  if(height!=='' && width!=='' && lengthBox!==''){
+    setBoxQuantity(() =>
+      calculateBoxes(height, lengthBox, width, itemsQuantity)
+    );
+    setTotal(() => pricePerBox * boxQuantity);
+  }
+}, [height, width, lengthBox, itemsQuantity, pricePerBox, boxQuantity]);
 
   return (
     <div>
         <h1>Калькулятор стоимости</h1>
-        
           {LOGISTICS.map((item) => (
           <label key={item.place}>
             <input
@@ -58,11 +57,10 @@ useEffect(() => {
           </label>
         ))}
        <br />
-        <input placeholder="высота" type="number" id="height" value={height} onChange={(e) => setHeight(e.target.value)} />
-        <input placeholder="ширина" type="number" id="width" value={width} onChange={(e) => setWidth(e.target.value)} />
-        <input placeholder="длина" type="number" id="length" value={length} onChange={(e) => setLength(e.target.value)} />
-        <input  placeholder="количество единиц" type="number" id="quantity" value={itemsQuantity} onChange={
-          handleQuantity} /> <br />
+        <input placeholder="высота" type="number" id="height" value={height} onChange={(e) => setHeight(+e.target.value)} />
+        <input placeholder="ширина" type="number" id="width" value={width} onChange={(e) => setWidth(+e.target.value)} />
+        <input placeholder="длина" type="number" id="length" value={lengthBox} onChange={(e) => setLengthBox(+e.target.value)} />
+        <input  placeholder="количество единиц" type="number" id="quantity" value={itemsQuantity} onChange={(e)=>setItemsQuantity(+e.target.value)} /> <br />
 {PACKAGE.map((item) => (
   <label key={item.name}> 
   <input type="checkbox" data-price={itemsQuantity>1000?item.to1000:itemsQuantity>1001 && itemsQuantity<2001?item.from1001:item.from2001}  onChange={(e)=>handleCheckboxChange(e,item.all)} /> {item.name} </label>
