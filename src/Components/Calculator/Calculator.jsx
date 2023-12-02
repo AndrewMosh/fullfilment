@@ -16,13 +16,13 @@ const Calculator = () => {
     const checkbox = e.target;
     const price = parseFloat(checkbox.getAttribute('data-price'));
     if (checkbox.checked) {
-      if(all===true){
+      if(all){
         setTotal((prevTotal) => (price*itemsQuantity)+prevTotal);
       }else {
         setTotal((prevTotal) => (prevTotal + price));
       }
     } else {
-      if(all===true){
+      if(all){
         setTotal((prevTotal) => prevTotal - (price * itemsQuantity));
       }else {
         setTotal((prevTotal) => (prevTotal - price));

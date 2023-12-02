@@ -9,7 +9,7 @@ export function calculateBoxes(height, length, width, quantity) {
       const itemVolume = height * length * width;
   
       const itemsInBox = Math.floor(boxVolume / itemVolume);
-      const boxesNeeded = Math.ceil(quantity / itemsInBox);
+      const boxesNeeded = Math.floor(quantity / itemsInBox);
   
       totalBoxes += boxesNeeded;
       quantity -= itemsInBox * boxesNeeded;

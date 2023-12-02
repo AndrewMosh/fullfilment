@@ -1,5 +1,4 @@
 export const PACKAGE = [
-   
     {
         name:'проверка на брак',
         to1000:10,
@@ -7,7 +6,6 @@ export const PACKAGE = [
         from2001:5,
         all:true  
     },
-  
     {
         name:'дополнительная упаковка',
         to1000:6,
@@ -15,7 +13,6 @@ export const PACKAGE = [
         from2001:6,
         all:true
     },
-    
     {
         name:'Забрать товар с Южных ворот или ТЯК Москва',
         to1000:1500,
@@ -29,7 +26,6 @@ export const PACKAGE = [
         from1001:6,
         from2001:6,
         all:true
-
     },
 
 ]
