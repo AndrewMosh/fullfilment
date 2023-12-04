@@ -1,0 +1,19 @@
+.about {
+    background-color: #0250EE;
+    border-radius: 40px;
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    .wrapper {
+        padding: 128px 80px;
+        display:flex;
+        gap: 28px;
+    }
+    .cards {
+     display: grid;
+     grid-template-columns: 408px 408px;
+     gap: 28px;
+     justify-content: center;
+    }
+    }
+}
