@@ -46,6 +46,7 @@ useEffect(() => {
     <div>
         <h1>Калькулятор стоимости</h1>
           {LOGISTICS.map((item) => (
+            <>
           <label key={item.place}>
             <input
               type="checkbox"
@@ -54,7 +55,8 @@ useEffect(() => {
               onChange={handleCheckboxChange}
             />
             {item.name} - {item.place}
-          </label>
+          </label> <br />
+          </>
         ))}
        <br />
         <input placeholder="высота" type="number" id="height" value={height} onChange={(e) => setHeight(+e.target.value)} />
