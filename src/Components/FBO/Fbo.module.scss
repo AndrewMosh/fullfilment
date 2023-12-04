@@ -1,0 +1,16 @@
+.fbo {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-bottom: 64px;
+    .container {
+        padding: 64px 80px;
+        .content {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+        }
+        .title {
+            text-align: center;
+        }
+    }
+}

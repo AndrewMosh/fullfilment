@@ -1,0 +1,22 @@
+.advantages {
+    max-width: 1440px;
+    margin: 0 auto;
+    .container {
+        padding: 56px 298px;
+        display: grid;
+        grid-template-rows: 1fr;
+        .title {
+            text-align: center;
+            font-size: 32px;
+            margin: 0;
+        }
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2,408px);
+            padding-top: 56px;
+            gap: 28px;
+            padding-bottom: 28px;
+        }
+        
+    }
+}

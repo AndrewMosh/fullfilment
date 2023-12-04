@@ -1,6 +1,6 @@
 import styles from './About.module.scss'
 import { ABOUT } from '../../utils/ABOUT'
-import { TallCard, ShortCard } from '../UI/AboutUs/Cards'
+import { TallCard, ShortCard } from '../UI/Cards/Cards'
 const About = () => {
 
     return (
