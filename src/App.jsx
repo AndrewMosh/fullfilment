@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Introduction />
       <About/>
-      {/* <Calculator/> */}
+      <Calculator/>
       <Advantages/>
       <Proccesses/>
       <Fbo/>

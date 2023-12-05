@@ -1,5 +1,5 @@
 import styles from './Buttons.module.scss'
-
+import error from '../../../assets/images/error.png'
 export const ButtonBlue = ({children}) => {
     return (
         <button
@@ -40,6 +40,26 @@ export const ButtonEmpty = ({children}) => {
         >
             <a href="tel:+79001111111"> {children}</a>
            
+        </button>
+    )
+}
+export const ButtonClear = ({children, onClick}) => {
+    return (
+        <button 
+        onClick={onClick}
+        className={styles.clear}
+        >
+            {children}
+        </button>
+    )
+}
+export const ButtonError = ({children, onClick}) => {
+    return (
+        <button 
+        onClick={onClick}
+        className={styles.btn + ' '+styles.error}
+        >
+        <img src={error} alt="error" /> {children}
         </button>
     )
 }

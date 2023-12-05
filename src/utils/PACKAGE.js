@@ -1,31 +1,71 @@
 export const PACKAGE = [
     {
+        id:5,
         name:'проверка на брак',
         to1000:10,
         from1001:8,
         from2001:5,
-        all:true  
+        all:true,
+        applied:false, 
     },
-    {
-        name:'дополнительная упаковка',
+    {   
+        id:6,
+        name:'Упаковка в Zip-пакет',
         to1000:6,
         from1001:6,
         from2001:6,
-        all:true
+        all:true,
+        applied:false,
     },
     {
-        name:'Забрать товар с Южных ворот или ТЯК Москва',
+        id:7,
+        name:'Упаковка в воздушно пузырчатую пленку',
+        to1000:6,
+        from1001:6,
+        from2001:6,
+        all:true,
+        applied:false,
+    },
+
+    {
+        id:8,
+        name:'Забрать товар с Южных ворот',
         to1000:1500,
         from1001:1500,
         from2001:1500,
-        all:false
+        all:false,
+        weight:'до 350 кг',
+        info:'Без учета внутренних оплат',
+        applied:false,
     },
     {
+        id:9,
+        name:'Забрать товар с  ТЯК Москва',
+        to1000:1500,
+        from1001:1500,
+        from2001:1500,
+        all:false,
+        weight:'до 350 кг',
+        info:'Без учета внутренних оплат',
+        applied:false,
+    },
+    {
+        id:10,
         name:'Нужны дополнительные вложения',
         to1000:6,
         from1001:6,
         from2001:6,
-        all:true
+        all:true,
+        applied:false,
+    },
+    {
+        id:11,
+        name:'Контент съемка товара',
+        to1000:6,
+        from1001:6,
+        from2001:6,
+        all:true,
+        applied:false,
     },
 
 ]

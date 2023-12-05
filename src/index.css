@@ -21,5 +21,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
-
+input {
+  caret-color: #0250EE;
+}

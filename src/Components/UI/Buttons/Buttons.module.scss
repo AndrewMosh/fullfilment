@@ -59,3 +59,30 @@ a {
  
 
 }
+.clear {
+    background-color: transparent;
+    color: #0250EE;
+    &:hover {
+        color: #206EFF; 
+     }
+     &:active {
+         color: #0240BE; 
+     }  
+}
+.error {
+        color: #FFFFFF;
+    background-color: #DB063B;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+   
+    &:hover {
+        background-color: #db063bd5;
+    }
+    &:active {
+        background-color: rgb(190, 2, 2);
+    }
+    .content {
+       
+    }
+}
