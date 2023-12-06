@@ -1,0 +1,16 @@
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items:flex-start;
+  h2 {
+    margin-top: 0;
+  }
+  .info {
+    display: grid;
+    gap:4px;
+    grid-template-columns: repeat(3, 1fr);
+    
+    
+  }
+}

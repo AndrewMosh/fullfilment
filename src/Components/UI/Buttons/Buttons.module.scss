@@ -3,11 +3,15 @@
 // padding: 16px 32px;
 text-align: center;
 border-radius: 40px;
+display: flex;
+align-items: center;
+gap:9px;
 a {
     text-decoration: none;
 }
 }
 .blue {
+   
     a {
         color: #FFFFFF;
        
@@ -82,7 +86,7 @@ a {
     &:active {
         background-color: rgb(190, 2, 2);
     }
-    .content {
-       
-    }
+}
+.noLink {
+    color:white;
 }

@@ -1,5 +1,6 @@
 import styles from './Buttons.module.scss'
 import error from '../../../assets/images/error.png'
+import resum from '../../../assets/images/resum.png'
 export const ButtonBlue = ({children}) => {
     return (
         <button
@@ -8,6 +9,15 @@ export const ButtonBlue = ({children}) => {
              <a href="">
             {children}
             </a>
+        </button>
+    )
+}
+export const ButtonBlueWithoutLink = ({children, onClick}) => {
+    return (
+        <button
+            onClick={onClick}
+            className={styles.btn + ' ' + styles.blue+' '+styles.noLink}>
+            {children}
         </button>
     )
 }
@@ -62,4 +72,14 @@ export const ButtonError = ({children, onClick}) => {
         <img src={error} alt="error" /> {children}
         </button>
     )
+}
+
+export const ButtonRecalculate = ({children, onClick}) => {
+    return (
+        <button
+            onClick={onClick}
+            className={styles.btn + ' ' + styles.blue+' '+styles.noLink}>
+            <img src={resum} alt="recalculate" />{children}
+        </button>
+    )  
 }

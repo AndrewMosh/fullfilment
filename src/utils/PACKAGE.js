@@ -1,7 +1,7 @@
 export const PACKAGE = [
     {
         id:5,
-        name:'проверка на брак',
+        name:'Проверка на брак',
         to1000:10,
         from1001:8,
         from2001:5,
@@ -19,7 +19,7 @@ export const PACKAGE = [
     },
     {
         id:7,
-        name:'Упаковка в воздушно пузырчатую пленку',
+        name:'Упаковка в пузыр. пленку',
         to1000:6,
         from1001:6,
         from2001:6,
@@ -67,6 +67,48 @@ export const PACKAGE = [
         all:true,
         applied:false,
     },
+    {
+        id:12,
+        name:'Приемка/инвентаризация',
+        to1000:4,
+        from1001:3,
+        from2001:2,
+        all:true,
+        applied:true,
+        default:true
+    },
+    {
+        id:13,
+        name:'Сортировочные работы',
+        to1000:5,
+        from1001:6,
+        from2001:5,
+        all:true,
+        applied:true,
+        default:true
+    },
+    {
+        id:14,
+        name:'Маркировка товара',
+        to1000:6,
+        from1001:6,
+        from2001:6,
+        all:true,
+        applied:true,
+        default:true
+    },
+    {
+        id:15,
+        name:'Стоимость всех коробов',
+        to1000:160,
+        from1001:110,
+        from2001:100,
+        all:true,
+        applied:true,
+        default:true
+    },
+
+
 
 ]
 

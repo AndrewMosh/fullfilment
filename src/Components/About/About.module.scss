@@ -7,11 +7,12 @@
     .wrapper {
         padding: 128px 80px;
         display:flex;
-        gap: 28px;
+        gap:28px;
     }
     .cards {
      display: grid;
-     grid-template-columns: 408px 408px;
+     grid-template-columns: repeat(2, minmax(300px,408px)) ;
+  
      gap: 28px;
      justify-content: center;
     }

@@ -68,3 +68,23 @@ export const FBOCard = ({title, text1, text2 }) => {
         </div>
     )
 }
+
+export const ResultCard=({title, perUnit, value})=>{
+    return (
+<div className={styles.resultCard}>
+    <div className={styles.title}>{title}</div>
+    <div className={styles.perUnit}>{perUnit}</div> 
+    <div className={styles.value}>{value}</div>
+</div>
+    )
+}
+
+export const ResultCardWithLogistics=({title, place, info, price, weight})=>{
+    return (
+        <div className={styles.resultCard}> 
+            <div className={styles.content}><div className={styles.title}>{title}</div> <div>{price}</div></div>
+            <div className={styles.price}>{place} {info?<span className={styles.weight}>{weight}</span>:''}</div>
+         {info?<div className={styles.info}>{info}</div>:''}
+        </div>
+    )
+}
