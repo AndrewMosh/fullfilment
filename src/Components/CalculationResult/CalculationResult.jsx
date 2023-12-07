@@ -1,9 +1,10 @@
 import styles from './CalculationResult.module.scss'
 import { ResultCard, ResultCardWithLogistics } from '../UI/Cards/Cards'
-import {ButtonRecalculate} from '../UI/Buttons/Buttons'
-
-const CalculationResult = ({total,handleRecalculate, width, height, lengthBox, itemsQuantity,boxQuantity,packages, logistics }) => {
-
+import {ButtonRecalculate, ButtonTransparent} from '../UI/Buttons/Buttons'
+import info from '../../assets/images/info.svg'
+import pack from '../../assets/images/package.svg'
+import transfer from '../../assets/images/logistics.svg'
+const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQuantity,boxQuantity,packages, logistics }) => {
     const multiplyBoxes =(quantity, obj, boxes)=> {
         if (quantity<=1000) {
             return obj?obj.to1000 * boxes:0
@@ -47,28 +48,37 @@ const CalculationResult = ({total,handleRecalculate, width, height, lengthBox, i
     let additionalPackage = packages?packages.filter(item =>item.id===10 && item.applied===true)[0]:0;
     let additionalPackageTotal = multiplyBoxes(itemsQuantity, additionalPackage,boxQuantity);
     let allPackages = damageTotal + zipTotal + bubbleTotal + additionalPackageTotal+ sortingTotal + receivingTotal + markingTotal + allBoxesTotal;
-
+    let checkLogistics = logistics?logistics.filter(item =>item.applied===true):0;
+    let allLogistics= checkLogistics.map(item=>item.price*boxQuantity).reduce((a,b)=>a+b,0) 
+    let checkLogisticsFromPackages = packages?packages.filter(item =>item.all===false && item.applied===true):0;
+    let allLogisticsFromPackages= checkLogisticsFromPackages.map(item=>item.to1000).reduce((a,b)=>a+b,0)
+    let totalLogistics=allLogistics+allLogisticsFromPackages
+    let total=allPackages+totalLogistics
     return (
 <div className={styles.result}>
-    <div><div>Примерная стоимость</div><div>{total}</div></div>
+    <div className={styles.titleContainer}><div className={styles.titleFlex}><div className={styles.title}>Примерная стоимость</div><div className={styles.price}>{total} ₽</div></div>
+    <ButtonTransparent>Скачать прайс-лист</ButtonTransparent>
+    </div>
     <div>
-    <h2>Информация о товаре</h2>
-    <div className={styles.info}>
+    <div className={styles.subhead}><img src={info} alt="info" />
+    <h2>Информация о товаре</h2></div>
+    <div className={styles.info} >
 <ResultCard title='Габариты' perUnit='(ДхВхШсм):' value={`${lengthBox}x${height}x${width}`}/>
 <ResultCard title='Количество' perUnit='(шт):' value={itemsQuantity}/>
 <ResultCard title='Коробки' perUnit='(примерно шт):' value={boxQuantity}/>
     </div>
     </div>
     <div>
-    <h2>Упаковка {allPackages}</h2>
+        <div className={styles.subhead}><img src={pack} alt="package" /><h2>Упаковка <span className={styles.priceSeparated}>{allPackages}  ₽</span></h2></div>
     <div className={styles.info}>
-{packages?packages.filter(item=>item.applied===true).map((item)=>(<ResultCard key={item.id} title={item.name} perUnit={`${calculatePerUnit(itemsQuantity, item)} ₽/шт`} value={`${multiplyBoxes(itemsQuantity, item,boxQuantity)} ₽`}/>)):null}
+{packages?packages.filter(item=>item.applied===true && item.all===true).map((item)=>(<ResultCard key={item.id} title={item.name} perUnit={`${calculatePerUnit(itemsQuantity, item)} ₽/шт`} value={`${multiplyBoxes(itemsQuantity, item,boxQuantity)} ₽`}/>)):null}
     </div>
     </div>
     <div>
-    <h2>Доставка</h2>
+        <div className={styles.subhead}><img src={transfer} alt="logistics" /><h2>Логистика <span className={styles.priceSeparated}>{totalLogistics} ₽</span></h2> </div>
     <div className={styles.info}>
-    {logistics?logistics.filter(item=>item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.name} price={item.price} place={item.place} />)):null}
+    {logistics?logistics.filter(item=>item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.name} price={`${item.price * boxQuantity} ₽`} place={item.place} />)):null}
+    {packages?packages.filter(item=>item.all===false && item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.nameForCard} price={`${item.to1000} ₽`} place={item.place} weight={item.weight} info={item.info} />)):null}
     </div>
     </div>
 <ButtonRecalculate onClick={handleRecalculate}>Пересчитать</ButtonRecalculate>

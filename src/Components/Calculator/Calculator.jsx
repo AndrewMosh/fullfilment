@@ -17,23 +17,27 @@ const Calculator = () => {
   const [popup, setPopup] = useState(false);
   const [logistics, setLogistics]=useState(LOGISTICS);
   const [packages, setPackages]=useState(PACKAGE);
-  const [error, setError]=useState(false);
+  const [error, setError]=useState({params:false, logistics:false});
   const [message, setMessage]=useState('');
   const [addresses, setAddresses]=useState([]);
   const [result,setResult]=useState(false);
-  // const [packagesTotal, setPackagesTotal]=useState(0);
-  // const [damagesTotal, setDamagesTotal]=useState(0);
-  // const [zipTotal, setZipTotal]=useState(0);
-  // const [bubbleTotal, setBubbleTotal]=useState(0);
-  // const [additionalPackageTotal, setAdditionalPackageTotal]=useState(0);
+
+
 
 const handleCalculate=()=> {
-  if (height!=='' && width!=='' && lengthBox!=='' && itemsQuantity!=='') {
+  if (height!=='' && width!=='' && lengthBox!=='' && itemsQuantity!=='' && logistics.some(item=>item.applied===true)) {
     setResult(!result);
-    setError(false)
+    setError({params:false, logistics:false});
     setMessage('')
-  } else {
-    setError(true)
+  }else if (height=='' && width=='' && lengthBox=='' && itemsQuantity=='' && logistics.some(item=>item.applied===true)) {
+    setError({params:true, logistics:false});
+    setMessage('Вы не ввели данные')
+  } else if (logistics.every(item=>item.applied===false) && height!=='' && width!=='' && lengthBox!=='' && itemsQuantity!=='' ) {
+    setError({params:false, logistics:true});
+    setMessage('Вы не ввели данные')
+  }
+  else {
+    setError({params:true, logistics:true});
     setMessage('Вы не ввели данные')
   }
 }
@@ -47,13 +51,7 @@ const handleCalculate=()=> {
     }
    }
 const showModal = () => {
-  if (height!=='' && width!=='' && lengthBox!=='' && itemsQuantity!=='') {
     setPopup(!popup);
-    setMessage('')
-  } else {
-    setError(true)
-    setMessage('Вы не ввели данные')
-  }
 }
 const clearData=()=>{
   setItemsQuantity('');
@@ -65,7 +63,7 @@ const clearData=()=>{
   setPopup(false);
   setLogistics(LOGISTICS);
   setPackages(PACKAGE);
-  setError(false)
+  setError({params:false, logistics:false});
   setMessage('')
   setAddresses([]);
 }
@@ -74,10 +72,6 @@ clearData()
 setResult(!result);
 }
 const handleCheckedChange = (id, type) => {
-  if (height==='' && width==='' && lengthBox=='' && itemsQuantity=='') {
-    setError(true)
-    setMessage('Вы не ввели данные')
-        } else {
           if (type==='logistics') {
             setLogistics(prevLogistics => {
               const index = prevLogistics.findIndex(item => item.id === id);
@@ -90,8 +84,6 @@ const handleCheckedChange = (id, type) => {
               }
             });
           } else {
-            setError(false)
-            setMessage('')
             setPackages(prevPackages => {
               const index = prevPackages.findIndex(item => item.id === id);
               if (index!== -1) {
@@ -103,71 +95,44 @@ const handleCheckedChange = (id, type) => {
               }
             });
           }
-        }
 }
-  const handleCheckboxChange = (e, all) => {
-    if (height==='' && width==='' && lengthBox==='' && itemsQuantity==='') {
-setError(true)
-setMessage('Вы не ввели данные')
-    } else {
-      setError(false)
-      setMessage('')
-      const checkbox = e.target;
-    const price = parseFloat(checkbox.getAttribute('data-price'));
-    if (checkbox.checked) {
-      if(all===true){
-        setTotal((prevTotal) => (price*itemsQuantity)+prevTotal);
-      }else {
-        setTotal((prevTotal) => (prevTotal + price));
-      }
-    } else {
-      if(all===true){
-        setTotal((prevTotal) => prevTotal - (price * itemsQuantity));
-      }else {
-        setTotal((prevTotal) => (prevTotal - price));
-      }
-    }
-    }
-  };
-const pricePerBox= itemsQuantity<=1000?160:itemsQuantity>=1001 && itemsQuantity<=2001?110:100
 const handleHeight=(e)=>{
   setHeight(e.target.value)
   if (e.target.value>40) {
-    setError(true)
+    setError({params:true, logistics:false});
     setMessage('не более 60х40х40см')
 } else {
-  setError(false)
+  setError({params:false, logistics:false});
   setMessage('')
 }
 }
 const handleWidth=(e)=>{
   setWidth(e.target.value)
   if (e.target.value>40) {
-    setError(true)
+    setError({params:true, logistics:false});
     setMessage('не более 60х40х40см')
 }else {
-  setError(false)
+  setError({params:false, logistics:false});
   setMessage('')
 }
 }
 const handleLengthBox=(e)=>{
   setLengthBox(e.target.value)
   if (e.target.value>60) {
-    setError(true)
+    setError({params:true, logistics:false});
     setMessage('не более 60х40х40см')
 } else {
-  setError(false)
+  setError({params:false, logistics:false});
   setMessage('')
 }
 }
 useEffect(() => {
-  if(height!=='' && width!=='' && lengthBox!=='' && !error){
+  if(height!=='' && width!=='' && lengthBox!=='' && !error.params && itemsQuantity!=='' ){
     setBoxQuantity(() =>
       calculateBoxes(height, lengthBox, width, itemsQuantity)
     );
-    setTotal(() => pricePerBox * boxQuantity);
   }
-}, [height, width, lengthBox, itemsQuantity, pricePerBox, boxQuantity]);
+}, [height, width, lengthBox, itemsQuantity, boxQuantity]);
 
   return (
 
@@ -177,7 +142,7 @@ useEffect(() => {
       <ButtonTransparent>Скачать прайс-лист</ButtonTransparent>
       </div>
         <div className={styles.popup}>
-        <div style={{border:popup?'2px solid #0250EE':'2px solid #A9B0BE'}} className={styles.inputContainer}  onClick={showModal}>
+        <div style={{border:popup?'2px solid #0250EE': error.logistics?'2px solid #DB063B':'2px solid #A9B0BE'}} className={styles.inputContainer}  onClick={showModal}>
         <input className={styles.input} value={addresses} placeholder='Выберите адреc отгрузки товара'  type="text" />
         <img onClick={showModal} src={popup ? up : down} alt="choose" />
         </div>
@@ -188,7 +153,6 @@ useEffect(() => {
           <div className={styles.checkboxContainer}>
             <div className={styles.inputCenter}>
             <input
-            disabled={height!=='' && width!=='' && lengthBox!=='' && itemsQuantity!==''?false:true}
             className={styles.customCheckbox}
             id={item.place}
               type="checkbox"
@@ -197,7 +161,7 @@ useEffect(() => {
               checked={item.applied}
               onChange={(e) => {
                 handleCheckedChange(item.id, 'logistics')
-                handleCheckboxChange(e, item.all)
+                // handleCheckboxChange(e, item.all)
                 handleAddAddress(e, item.place)
               } }
             /> 
@@ -218,10 +182,10 @@ useEffect(() => {
         <h2>Заполните параметры товара</h2>
         <small>Укажите минимальные размеры единицы товара (ДхВхШ не более 60х40х40см)</small>
         <div className={styles.inputs}>
-        <input style={{border:error?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Длина: 60" type="number" id="length" value={lengthBox} onChange={handleLengthBox}  />
-        <input style={{border:error?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Высота: 40" type="number" id="height" value={height} onChange={handleHeight} />
-        <input style={{border:error?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Ширина: 40" type="number" id="width" value={width} onChange={handleWidth}   />
-        <input style={{border:error?'2px solid #DB063B':'2px solid #D2D4D8'}}  placeholder="Количество:100 000" type="number" id="quantity" value={itemsQuantity} onChange={(e)=>setItemsQuantity(+e.target.value)} />
+        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Длина: 60" type="number" id="length" value={lengthBox} onChange={handleLengthBox}  />
+        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Высота: 40" type="number" id="height" value={height} onChange={handleHeight} />
+        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Ширина: 40" type="number" id="width" value={width} onChange={handleWidth}   />
+        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}}  placeholder="Количество:100 000" type="number" id="quantity" value={itemsQuantity} onChange={(e)=>setItemsQuantity(+e.target.value)} />
         </div>
       </div>
    <div className={styles.services}>
@@ -232,7 +196,7 @@ useEffect(() => {
   <div className={styles.servicesContainer} >
   <input className={styles.customCheckbox}  checked={item.applied} id={item.name} type="checkbox" data-price={ itemsQuantity>1000?item.to1000:itemsQuantity>1001 && itemsQuantity<2001?item.from1001:item.from2001}  onChange={(e)=> {
     handleCheckedChange(item.id, 'packages') 
-   handleCheckboxChange(e,item.all)
+  //  handleCheckboxChange(e,item.all,once)
    
   }} /><label className={styles.name} style={{lineHeight:item.weight?'16px':'28px'}}  htmlFor={item.name}> {item.name} {item.weight?<span className={styles.weight}>{item.weight}</span>:''} <br />{item.info?<small style={{color:'#8A93A6',fontSize:'12px'}}>{item.info}</small>:''}</label> </div>
 ))}
@@ -240,7 +204,7 @@ useEffect(() => {
    </div>
    </div>
    <div className={styles.buttons}>
-   <div style ={{display:'flex',flexDirection:'column',justifyContent:'center'}}>{error? <ButtonError onClick={handleCalculate}>Рассчитать стоимость</ButtonError>: <ButtonBlueWithoutLink onClick={handleCalculate}>Рассчитать стоимость </ButtonBlueWithoutLink>}<div style={{textAlign:'center',color:'#DB063B',lineHeight:'16px',marginTop:'8px'}}>{message}</div></div>
+   <div style ={{display:'flex',flexDirection:'column',justifyContent:'center'}}>{error.params || error.logistics? <ButtonError onClick={handleCalculate}>Рассчитать стоимость</ButtonError>: <ButtonBlueWithoutLink onClick={handleCalculate}>Рассчитать стоимость </ButtonBlueWithoutLink>}<div style={{textAlign:'center',color:'#DB063B',lineHeight:'16px',marginTop:'8px'}}>{message}</div></div>
 <ButtonClear onClick={clearData}>Очистить данные</ButtonClear>
 </div>
     </div></>:<CalculationResult total={total} handleRecalculate={handleRecalculate} width={width} height={height} lengthBox={lengthBox} itemsQuantity={itemsQuantity} boxQuantity={boxQuantity} logistics={logistics} packages={packages} />}
