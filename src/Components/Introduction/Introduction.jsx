@@ -1,5 +1,5 @@
 import styles from './Introduction.module.scss';
-import { ButtonBlue, ButtonTransparent} from '../UI/Buttons/Buttons';
+import { ButtonBlue, ButtonTransparentPhone} from '../UI/Buttons/Buttons';
 import Intro from '../../assets/images/Intro.svg'
 const Introduction = () => {
     return (
@@ -11,15 +11,15 @@ const Introduction = () => {
                     Фулфилмент, <br /> которому можно <br /> доверять
                     </h1>
                     <p className={styles.text}>
-                    Надежно доставим ваш груз на склады маркетплейсов в Москве и МО
+                    Надежно доставим ваш груз на склады <br /> маркетплейсов в Москве и МО
                     </p>
                 </div>
                 <div className={styles.buttons}>
-                    <ButtonBlue>Узнать стоимость</ButtonBlue>
-                    <ButtonTransparent>Позвонить</ButtonTransparent>
+                    <ButtonBlue link='#calculator' text='Узнать стоимость'/>
+                    <ButtonTransparentPhone>Позвонить</ButtonTransparentPhone>
                 </div>
                 </div>
-                <div className={styles.image}>
+                <div className={styles.image}> 
                 <img src={Intro} alt="intro" />
             </div>
             </div>

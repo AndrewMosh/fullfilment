@@ -66,13 +66,13 @@
             display: flex;
             flex-direction: column;
             align-items: baseline;
-            gap:6px;
+            gap:10px;
             .servicesContainer {
                 display: flex;
                 align-items: center;
                 .name {
                         font-size: 16px;
-                        margin-left: 16px;
+                        margin-left: 8px;
                         cursor:  pointer;
                 }
                 .customCheckbox {
@@ -97,7 +97,8 @@
     .inputs {
         display: flex;
         gap:4px;
-        margin-top: 16px;
+        margin-top: 9px;
+        margin-bottom: 40px;
         input {
             padding: 16px;
             border: 2px solid #D2D4D8;
@@ -105,6 +106,9 @@
             cursor:  pointer;
             &:focus {
                 border: 2px solid #0250EE;
+            }
+            &::placeholder {
+                font-size: 16px;
             }
         }
     }
@@ -168,13 +172,14 @@
                     height: 24px;
                     border-radius: 2px;
                     appearance: none;
-                    background-color: rgba(8, 10, 15, 0.15);
+                    background-color:#080A0F1A;
+                    
                     &:checked{
                         background-image: url('../../assets/images/Check.svg');
                         background-color: #0250EE;
                     }
                     &:active {
-                        background-color: rgba(8, 10, 15, 0.05);
+                        background-color: rgba(8, 10, 15, 0.15);
                     }
                 }    
             }
@@ -188,15 +193,26 @@
             display: flex;
             justify-content: space-between;
             background-color: white;
+            position: relative;
+            &::after {
+                content: '*';
+                position: absolute;
+             color: red;
+             top: 6px;
+             left: 15px;
+            }
             .input {
             cursor: pointer;
             padding: 16px 0;
-            width: 100%;
+            width: 95%;
             height: 100%;
             outline:none;
             border: none;
             caret-color: transparent;
             color:black;
+            text-overflow: ellipsis;
+            position: relative;
+          
             }   
         }
     }

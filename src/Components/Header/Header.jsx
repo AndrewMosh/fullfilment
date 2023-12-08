@@ -1,13 +1,14 @@
 import styles from './Header.module.scss'
 import { MENU } from '../../utils/MENU'
 import Logo from '../../assets/images/Logo.svg'
-import { ButtonBlue, ButtonEmpty } from '../UI/Buttons/Buttons'
-const Header = () => {
+import { ButtonBlue, ButtonEmptyPhone } from '../UI/Buttons/Buttons'
+import MobileMenu from '../MobileMenu/MobileMenu'
+const Header = ({isOpen, toggleMenu, setIsOpen}) => {
     return (
         <header className={styles.header}>
 <div className={styles.container}>
     <div className={styles.wrapper}>
-    <div className={styles.logo}><img src={Logo} alt="FullX" /></div>
+    <div className={styles.logo}><a href="/"><img src={Logo} alt="FullX" /></a></div>
     <nav className={styles.menu}>
         <ul className={styles.list}>
             {
@@ -20,8 +21,13 @@ const Header = () => {
         </ul>
     </nav>
     <div className={styles.buttons}>
-<ButtonBlue>Рассчитать стоимость</ButtonBlue>
-<ButtonEmpty>+79001111111</ButtonEmpty>
+<ButtonBlue link='#calculator' text='Узнать стоимость'/>
+<ButtonEmptyPhone>+7 (977) 864-14-17</ButtonEmptyPhone>
+<MobileMenu
+        isOpen={isOpen}
+        toggleMenu={toggleMenu}
+        setIsOpen={setIsOpen}
+      />
 </div>
 </div>
 </div>

@@ -54,9 +54,13 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     let allLogisticsFromPackages= checkLogisticsFromPackages.map(item=>item.to1000).reduce((a,b)=>a+b,0)
     let totalLogistics=allLogistics+allLogisticsFromPackages
     let total=allPackages+totalLogistics
+    let formattedPrice = (price)=> {
+       const res = price.toString().split("").reverse().join("").match(/.{1,3}/g).reverse().join(" ").replace(/^0+/, '');
+       return res
+    } 
     return (
 <div className={styles.result}>
-    <div className={styles.titleContainer}><div className={styles.titleFlex}><div className={styles.title}>Примерная стоимость</div><div className={styles.price}>{total} ₽</div></div>
+    <div className={styles.titleContainer}><div className={styles.titleFlex}><div className={styles.title}>Примерная стоимость</div><div className={styles.price}>{formattedPrice(total)} ₽</div></div>
     <ButtonTransparent>Скачать прайс-лист</ButtonTransparent>
     </div>
     <div>
@@ -69,19 +73,19 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     </div>
     </div>
     <div>
-        <div className={styles.subhead}><img src={pack} alt="package" /><h2>Упаковка <span className={styles.priceSeparated}>{allPackages}  ₽</span></h2></div>
+        <div className={styles.subhead}><img src={pack} alt="package" /><h2>Упаковка <span className={styles.priceSeparated}>{formattedPrice(allPackages)}  ₽</span></h2></div>
     <div className={styles.info}>
-{packages?packages.filter(item=>item.applied===true && item.all===true).map((item)=>(<ResultCard key={item.id} title={item.name} perUnit={`${calculatePerUnit(itemsQuantity, item)} ₽/шт`} value={`${multiplyBoxes(itemsQuantity, item,boxQuantity)} ₽`}/>)):null}
+{packages?packages.filter(item=>item.applied===true && item.all===true).map((item)=>(<ResultCard key={item.id} title={item.name} perUnit={`${calculatePerUnit(itemsQuantity, item)} ₽/шт`} value={`${formattedPrice(multiplyBoxes(itemsQuantity, item,boxQuantity))} ₽`}/>)):null}
     </div>
     </div>
     <div>
-        <div className={styles.subhead}><img src={transfer} alt="logistics" /><h2>Логистика <span className={styles.priceSeparated}>{totalLogistics} ₽</span></h2> </div>
+        <div className={styles.subhead}><img src={transfer} alt="logistics" /><h2>Логистика <span className={styles.priceSeparated}>{formattedPrice(totalLogistics)} ₽</span></h2> </div>
     <div className={styles.info}>
-    {logistics?logistics.filter(item=>item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.name} price={`${item.price * boxQuantity} ₽`} place={item.place} />)):null}
-    {packages?packages.filter(item=>item.all===false && item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.nameForCard} price={`${item.to1000} ₽`} place={item.place} weight={item.weight} info={item.info} />)):null}
+    {logistics?logistics.filter(item=>item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.name} price={`${formattedPrice(item.price * boxQuantity)} ₽`} place={item.place} />)):null}
+    {packages?packages.filter(item=>item.all===false && item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.nameForCard} price={`${formattedPrice(item.to1000)} ₽`} place={item.place} weight={item.weight} info={item.info} />)):null}
     </div>
     </div>
-<ButtonRecalculate onClick={handleRecalculate}>Пересчитать</ButtonRecalculate>
+<ButtonRecalculate link='#calculator' onClick={handleRecalculate}>Пересчитать</ButtonRecalculate>
 </div>
     )
 }

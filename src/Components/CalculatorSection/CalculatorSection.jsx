@@ -4,7 +4,7 @@ import Contacts from '../Contacts/Contacts'
 
 const CalculatorSection=()=>{
     return (
-        <section className={styles.calculatorSection}>
+        <section id={'calculator'} className={styles.calculatorSection}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
             <Calculator/>

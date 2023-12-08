@@ -1,20 +1,49 @@
 .about {
     background-color: #0250EE;
     border-radius: 40px;
+    line-height: 20px;
     .container {
         max-width: 1440px;
         margin: 0 auto;
     .wrapper {
         padding: 128px 80px;
-        display:flex;
+        display:grid;
+        grid-template-columns: 1fr 2fr;
         gap:28px;
+        @media screen and (max-width: 1209px) {
+            padding: 40px 40px;
+          }
+          @media  screen and (max-width: 1047px) {
+            grid-template-columns: repeat(2, minmax(200px,508px)) ;
+         }
+          @media screen and (max-width: 825px) {
+            padding: 40px 20px; 
+          }
+          @media screen and (max-width: 549px) {
+            grid-template-columns: repeat(1, minmax(300px,508px)) ;
+          }
+         
+          @media screen and (max-width: 430px) {
+           padding: 16px 16px;
+           gap: 16px;
+        
+          }
     }
     .cards {
      display: grid;
      grid-template-columns: repeat(2, minmax(300px,408px)) ;
-  
      gap: 28px;
      justify-content: center;
+     @media  screen and (max-width: 1047px) {
+        grid-template-columns: repeat(1, minmax(200px,508px)) ;
+     }
+     @media screen and (max-width: 549px) {
+        grid-template-columns: repeat(1, minmax(300px,708px)) ;
+      }
+     @media screen and (max-width: 430px) {
+        gap: 16px;
+       }
+    
     }
     }
 }

@@ -1,12 +1,12 @@
 import styles from './Contacts.module.scss'
-import { ButtonBlue } from '../UI/Buttons/Buttons'
+import { ButtonBlueSocials } from '../UI/Buttons/Buttons'
 
 const Contacts=()=>{
     return (
-        <div className={styles.contacts}>
-<div className={styles.content}><div>Свяжитесь с нами</div><div>+7 (999) 999-99-99</div></div>
+        <div id={'address'} className={styles.contacts}>
+<div className={styles.content}><div>Свяжитесь с нами:</div><div>+7 (977) 864-14-17</div></div>
 <div className={styles.text}>или напишите в мессенджере:</div>
-<div className={styles.buttons}><ButtonBlue>Telegram</ButtonBlue> <ButtonBlue>WhatsApp</ButtonBlue></div>
+<div className={styles.buttons}><ButtonBlueSocials link={'https://telegram.me/'} text='Telegram'/>  <ButtonBlueSocials link={'https://wa.me/'} text='WhatsApp'/></div>
         </div>
     )
 }

@@ -17,7 +17,9 @@
         color:#8A93A6;
     }
     .buttons {
-        display: flex;
-        gap: 16px;
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap:16px;
+       text-align: center;
     }
 }

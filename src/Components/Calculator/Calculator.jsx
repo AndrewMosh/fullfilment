@@ -179,13 +179,13 @@ useEffect(() => {
 <div className={styles.overlayContainer}>
 <div className={styles.overlay} style={{display:popup?'flex':'none'}}></div>
       <div className={styles.params}>
-        <h2>Заполните параметры товара</h2>
+        <h2><span style={{color:'red',}}>*</span>Заполните параметры товара</h2>
         <small>Укажите минимальные размеры единицы товара (ДхВхШ не более 60х40х40см)</small>
         <div className={styles.inputs}>
         <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Длина: 60" type="number" id="length" value={lengthBox} onChange={handleLengthBox}  />
         <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Высота: 40" type="number" id="height" value={height} onChange={handleHeight} />
         <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}} placeholder="Ширина: 40" type="number" id="width" value={width} onChange={handleWidth}   />
-        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}}  placeholder="Количество:100 000" type="number" id="quantity" value={itemsQuantity} onChange={(e)=>setItemsQuantity(+e.target.value)} />
+        <input style={{border:error.params?'2px solid #DB063B':'2px solid #D2D4D8'}}  placeholder="Количество:1000" type="number" id="quantity" value={itemsQuantity} onChange={(e)=>setItemsQuantity(+e.target.value)} />
         </div>
       </div>
    <div className={styles.services}>

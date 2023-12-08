@@ -1,0 +1,23 @@
+.faq {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 64px 80px;
+    .title {
+        text-align: center;
+        font-size: 32px;
+    font-weight: 500;
+    padding-top:64px ;
+    padding-bottom: 56px;
+    }
+    .container {
+        padding: 64px 80px;
+        .cards {
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(2,408px);
+            column-gap: 28px;
+            row-gap: 10px;
+            align-items:flex-start;
+        }
+    }
+}

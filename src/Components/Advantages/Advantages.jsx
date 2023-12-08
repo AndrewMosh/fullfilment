@@ -1,18 +1,18 @@
 import styles from './Advantages.module.scss';
 import { ADVANTAGES } from '../../utils/ADVANTAGES';
-import { TallCard,LongCard } from '../UI/Cards/Cards';
+import { TallCardAdvantages,LongCard } from '../UI/Cards/Cards';
 
 const Advantages = () => {
 
     return (
-        <section className={styles.advantages}>
+        <section id={'advantages'} className={styles.advantages}>
             
             <div className={styles.container}>
             <h1 className={styles.title}>Наши преимущества</h1>
                 <div className={styles.wrapper}>
                     
 {ADVANTAGES.map(item => (
-    !item.long && <TallCard title={item.title} text={item.text} />
+    !item.long && <TallCardAdvantages title={item.title} text={item.text} />
 ))}
 </div>
 

@@ -4,7 +4,7 @@ import { FBOCard } from '../UI/Cards/Cards'
 
 const Fbo = () => {
     return (
-        <section className={styles.fbo}>
+        <section id={'fbo'} className={styles.fbo}>
             <div className={styles.container}>  
             <h1 className={styles.title}>FBO или FBS?</h1>
             <div className={styles.content}>

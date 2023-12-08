@@ -1,0 +1,37 @@
+import React from "react";
+import styles from "./MobileMenu.module.scss";
+import { MENU } from "../../utils/MENU";
+import closed from "../../assets/images/menuclosed.svg";
+import open from "../../assets/images/menuopen.svg";
+import logo from '../../assets/images/Logo.svg'
+function MobileMenu({ isOpen, toggleMenu }) {
+  return (
+    <div className={styles.burgerMenu}>
+     
+      <img
+        className={styles.burger}
+        onClick={toggleMenu}
+        style={{ position: isOpen ? "fixed" : "" }}
+        src={isOpen ? open : closed}
+        alt="menu"
+      />
+
+      {isOpen && (
+        <div className={styles.menu}>
+            <img style={{position:  "fixed", top: "16px", left: "18px"}} src={logo} alt="logo" />
+          <ul className={styles.menuList}>
+            {MENU.map((item) => (
+              <li key={item}>
+                <a className={styles.menuLink} onClick={toggleMenu} href={item.link}>
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default MobileMenu;

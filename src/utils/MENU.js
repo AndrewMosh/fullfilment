@@ -5,26 +5,26 @@ export const MENU = [
     },
     {
         name:'О нас',
-        link:'/about'
+        link:'#about'
     },
     {
         name:'Преимущества',
-        link:'/advantages'
+        link:'#advantages'
     },
     {
         name:'Процесс работы',
-        link:'/proccess'
+        link:'#proccess'
     },
     {
         name:'FBO/FBS',
-        link:'/fbo'
+        link:'#fbo'
     },
     {
         name:'Наш адрес',
-        link:'/address'
+        link:'#address'
     },
     {
         name:'FAQ',
-        link:'/faq'
+        link:'#faq'
     },
 ]

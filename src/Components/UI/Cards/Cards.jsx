@@ -1,5 +1,8 @@
 import styles from './Cards.module.scss'
-import { ButtonBlue } from '../Buttons/Buttons'
+import { ButtonBlueDownload } from '../Buttons/Buttons'
+import down from '../../../assets/images/ChevronDown.svg'
+import up from '../../../assets/images/ChevronUp.svg'
+
 export const ShortCard = ({title, text}) => {
     return (
         <div className={styles.card + ' ' + styles.short}>
@@ -27,6 +30,19 @@ export const TallCard = ({title, text}) => {
         </div>
     )
 }
+export const TallCardAdvantages = ({title, text}) => {
+    return (
+        <div className={styles.card + ' ' + styles.tall}>
+            <div className={styles.content}>
+            <h1 className={styles.titleAdvantages}>{title}</h1>
+            <p className={styles.text}>{text}</p>
+            </div>
+            
+                {/* <img className={styles.image} src={circle} alt="pic" /> */}
+       
+        </div>
+    )
+}
 
 export const LongCard = ({title, text}) => {
     return (
@@ -43,15 +59,16 @@ export const LongCard = ({title, text}) => {
 }
 
 
-export const ProccessCard = ({title, text, image,button }) => {
+export const ProccessCard = ({title, text, image,button, download, buttonText, link }) => {
     return (
         <div className={styles.proccess}>
         <div className={styles.content}>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.text}>{text}</p>
-            {button && <ButtonBlue>Скачать договор</ButtonBlue>}
+            {button && <ButtonBlueDownload download={download} link={link} buttonText={buttonText}/>}
+           
             </div>
-            <img src={image} alt='pic' />
+            <img className={styles.image} src={image} alt='pic' />
         </div>
     )
 }
@@ -85,6 +102,15 @@ export const ResultCardWithLogistics=({title, place, info, price, weight})=>{
             <div className={styles.content}><div className={styles.title}>{title}</div> <div>{price}</div></div>
             <div className={styles.price}>{place} {info?<span className={styles.weight}>{weight}</span>:''}</div>
          {info?<div className={styles.info}>{info}</div>:''}
+        </div>
+    )
+}
+export const FaqCard = ({question, answer, collapsed, onClick}) => {
+    return (
+        <div className={styles.faqCard}>
+            <div className={styles.question}>{question}</div>
+            {collapsed ? <div className={styles.answer}>{answer}</div> : ''}
+            <div className={styles.arrow}><img onClick={onClick} src={collapsed ? up : down} alt="arrow" /></div>
         </div>
     )
 }
