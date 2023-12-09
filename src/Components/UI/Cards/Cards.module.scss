@@ -75,6 +75,43 @@
         line-height: 24px;
     }
 }
+
+.tallAdvantage {
+    flex-direction: column;
+     overflow: hidden;
+    justify-content:start;
+ 
+    .content {
+     padding: 32px 32px 0 32px;
+    
+   
+    }
+    .titleAdvantages {
+     font-size: 20px;
+     margin-top: 0;
+     
+ }
+    .title {
+     font-size: 32px;
+     font-family: 'Inter';
+     max-width: 400px;
+     
+     .text {
+         font-size: 16px;
+         font-weight: 500;
+     }
+    }
+    .advantagePic {
+        padding-top: 10px;
+     min-width: 100px;
+     max-width: 251px;
+     align-self: flex-end;
+    }
+   
+     
+    
+ }
+
 .tall {
    flex-direction: column;
     overflow: hidden;
@@ -111,6 +148,11 @@
         font-weight: 500;
     }
    }
+   .advantagePic {
+    min-width: 100px;
+    max-width: 251px;
+    align-self: flex-end;
+   }
   
     .image {
       transform: scale(1.3);
@@ -140,6 +182,27 @@
 .long {
     padding: 32px;
     max-width: 844px;
+    justify-content: space-between;
+    @media screen and (max-width: 567px) {
+       flex-direction: column;
+        
+      }
+    .content {
+        display: flex;
+        flex-direction: column;
+      justify-content: space-between;
+      max-width: 426px;
+    
+    }
+    img {
+        padding-top: 10px;
+        min-width: 100px;
+     max-width: 251px;
+     @media screen and (max-width: 567px) {
+       align-self: flex-end;
+         
+       }
+    }
 }
 .short {
     padding: 32px;

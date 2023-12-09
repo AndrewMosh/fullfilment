@@ -11,6 +11,6 @@ export function calculateBoxes(length,height, width, quantity) {
   
       totalBoxes += boxesNeeded;
       quantity -= itemsInBox * boxesNeeded;
-      console.log(totalBoxes)
+   
     return totalBoxes || 1;
   }

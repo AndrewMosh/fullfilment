@@ -1,18 +1,20 @@
-import styles from './CalculatorSection.module.scss'
-import Calculator from '../Calculator/Calculator'
-import Contacts from '../Contacts/Contacts'
+import React from 'react';
+import styles from './CalculatorSection.module.scss';
+import Calculator from '../Calculator/Calculator';
+import Contacts from '../Contacts/Contacts';
 
-const CalculatorSection=()=>{
+const CalculatorSection = () => {
     return (
-        <section id={'calculator'} className={styles.calculatorSection}>
+        <section  className={styles.calculatorSection}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-            <Calculator/>
-            <Contacts/>
-            </div>
+                    {/* Используйте комментарии, чтобы объяснить структуру разметки и компонентов */}
+                    <Calculator />
+                    <Contacts />
+                </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default CalculatorSection
+export default CalculatorSection;

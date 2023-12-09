@@ -1,6 +1,6 @@
 import styles from './Buttons.module.scss'
-import error from '../../../assets/images/error.png'
-import resum from '../../../assets/images/resum.png'
+import error from '../../../assets/icons/error.png'
+import resum from '../../../assets/icons/resum.png'
 export const ButtonBlue = ({ link , text}) => {
     return (
         <button

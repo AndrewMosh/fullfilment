@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./MobileMenu.module.scss";
 import { MENU } from "../../utils/MENU";
-import closed from "../../assets/images/menuclosed.svg";
-import open from "../../assets/images/menuopen.svg";
-import logo from '../../assets/images/Logo.svg'
+import closed from "../../assets/icons/menuclosed.svg";
+import open from "../../assets/icons/menuopen.svg";
+import logo from '../../assets/icons/Logo.svg'
 function MobileMenu({ isOpen, toggleMenu }) {
   return (
     <div className={styles.burgerMenu}>

@@ -1,7 +1,7 @@
 import styles from './Cards.module.scss'
 import { ButtonBlueDownload } from '../Buttons/Buttons'
-import down from '../../../assets/images/ChevronDown.svg'
-import up from '../../../assets/images/ChevronUp.svg'
+import down from '../../../assets/icons/ChevronDown.svg'
+import up from '../../../assets/icons/ChevronUp.svg'
 
 export const ShortCard = ({title, text, img}) => {
     return (
@@ -31,21 +31,21 @@ export const TallCard = ({title, text, img}) => {
         </div>
     )
 }
-export const TallCardAdvantages = ({title, text}) => {
+export const TallCardAdvantages = ({title, text, img}) => {
     return (
-        <div className={styles.card + ' ' + styles.tall}>
-            <div className={styles.content}>
+        <div style={{justifyContent:'space-between'}} className={styles.card + ' ' + styles.tallAdvantage}>
+            <div  className={styles.content}>
             <h1 className={styles.titleAdvantages}>{title}</h1>
             <p className={styles.text}>{text}</p>
             </div>
             
-                {/* <img className={styles.image} src={circle} alt="pic" /> */}
+                <img className={styles.advantagePic} src={img} alt="pic" />
        
         </div>
     )
 }
 
-export const LongCard = ({title, text}) => {
+export const LongCard = ({title, text, img}) => {
     return (
         <div className={styles.card + ' ' + styles.long}>
             <div className={styles.content}>
@@ -53,7 +53,7 @@ export const LongCard = ({title, text}) => {
             <p className={styles.text}>{text}</p>
             </div>
             
-                {/* <img className={styles.image} src={long} alt="pic" /> */}
+                <img className={styles.image} src={img} alt="pic" />
        
         </div>
     )
