@@ -10,14 +10,37 @@
     display: grid;
     gap:4px;
     grid-template-columns:  minmax(192px, 1fr) minmax(192px, 1fr) minmax(192px, 1fr) minmax(192px, 1fr);
+    @media screen and (max-width: 871px) {
+      grid-template-columns:  minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+    }
+    @media screen and (max-width: 565px) {
+      grid-template-columns:  minmax(200px, 1fr) minmax(200px, 1fr) ;
+    }
+    @media screen and (max-width: 503px) {
+      grid-template-columns: 1fr ;
+      
+    }
   }
   .titleContainer {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    @media screen and (max-width: 740px) {
+      flex-direction: column;
+      gap: 24px;  
+    }
   }
   .title {
     font-size: 40px;
+    white-space: nowrap;
+    @media screen and (max-width: 871px) {
+      font-size: 32px;
+    }
+
+    @media screen and (max-width: 430px) {
+      font-size: 24px;
+      white-space: wrap;
+    }
   }
   .titleFlex {
     display: flex;
@@ -28,17 +51,32 @@
     color:#0250EE;
     font-size: 60px;
     margin-bottom: 15px;
+    @media screen and (max-width: 871px) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: 430px) {
+      font-size: 24px;
+      
+    }
   }
   .subhead {
     display: flex;
     align-items: center;
     padding-bottom: 8px;
+    @media screen and (max-width: 430px) {
+      font-size: 14px;
+      display: flex;
+     justify-content: space-between;
+    }
+   
     h2 {
       margin: 0;
       padding-left: 8px;
     }
     .priceSeparated {
       color: #0250EE;
+      padding-left: 20px;
+      font-size: 20px;
     }
   }
 }

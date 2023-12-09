@@ -1,6 +1,6 @@
 import styles from './CalculationResult.module.scss'
 import { ResultCard, ResultCardWithLogistics } from '../UI/Cards/Cards'
-import {ButtonRecalculate, ButtonTransparent} from '../UI/Buttons/Buttons'
+import {ButtonRecalculate, ButtonTransparentDownload} from '../UI/Buttons/Buttons'
 import info from '../../assets/images/info.svg'
 import pack from '../../assets/images/package.svg'
 import transfer from '../../assets/images/logistics.svg'
@@ -61,7 +61,7 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     return (
 <div className={styles.result}>
     <div className={styles.titleContainer}><div className={styles.titleFlex}><div className={styles.title}>Примерная стоимость</div><div className={styles.price}>{formattedPrice(total)} ₽</div></div>
-    <ButtonTransparent>Скачать прайс-лист</ButtonTransparent>
+    <ButtonTransparentDownload buttonText='Скачать прайс-лист'/>
     </div>
     <div>
     <div className={styles.subhead}><img src={info} alt="info" />
@@ -73,19 +73,19 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     </div>
     </div>
     <div>
-        <div className={styles.subhead}><img src={pack} alt="package" /><h2>Упаковка <span className={styles.priceSeparated}>{formattedPrice(allPackages)}  ₽</span></h2></div>
+        <div className={styles.subhead}><div style={{display:'flex', alignItems:'center'}}><img src={pack} alt="package" /><h2>Упаковка </h2></div><div className={styles.priceSeparated}>{formattedPrice(allPackages)}  ₽</div></div>
     <div className={styles.info}>
 {packages?packages.filter(item=>item.applied===true && item.all===true).map((item)=>(<ResultCard key={item.id} title={item.name} perUnit={`${calculatePerUnit(itemsQuantity, item)} ₽/шт`} value={`${formattedPrice(multiplyBoxes(itemsQuantity, item,boxQuantity))} ₽`}/>)):null}
     </div>
     </div>
     <div>
-        <div className={styles.subhead}><img src={transfer} alt="logistics" /><h2>Логистика <span className={styles.priceSeparated}>{formattedPrice(totalLogistics)} ₽</span></h2> </div>
+        <div className={styles.subhead}><div style={{display:'flex', alignItems:'center'}}><img src={transfer} alt="logistics" /><h2>Логистика</h2></div> <div className={styles.priceSeparated}>{formattedPrice(totalLogistics)} ₽</div> </div>
     <div className={styles.info}>
     {logistics?logistics.filter(item=>item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.name} price={`${formattedPrice(item.price * boxQuantity)} ₽`} place={item.place} />)):null}
     {packages?packages.filter(item=>item.all===false && item.applied===true).map((item)=>(<ResultCardWithLogistics key={item.id} title={item.nameForCard} price={`${formattedPrice(item.to1000)} ₽`} place={item.place} weight={item.weight} info={item.info} />)):null}
     </div>
     </div>
-<ButtonRecalculate link='#calculator' onClick={handleRecalculate}>Пересчитать</ButtonRecalculate>
+<ButtonRecalculate link='#calculator' onClick={handleRecalculate}>Рассчитать заново</ButtonRecalculate>
 </div>
     )
 }

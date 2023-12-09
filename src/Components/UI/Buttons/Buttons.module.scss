@@ -1,4 +1,5 @@
 .btn {
+    max-width: 247px;
     display: inline-flex;
 padding: 16px 32px;
 text-align: center;
@@ -16,6 +17,7 @@ a {
 }
 }
 .blue {
+  
     color: #FFFFFF;
     a {
         color: #FFFFFF;
@@ -53,6 +55,12 @@ a {
    
 
 }
+.transparentDownload {
+    @media screen and (max-width: 656px) {
+        order:-1;
+        
+    }
+}
 .empty {
     background-color: transparent;
     a {
@@ -71,6 +79,7 @@ a {
 .clear {
     background-color: transparent;
     color: #0250EE;
+    white-space: nowrap;
     &:hover {
         color: #206EFF; 
      }
@@ -102,4 +111,15 @@ a {
 .socials {
    display: flex;
    justify-content: center;
+   min-width: 120px;
+ a {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    @media screen and (max-width: 430px) {
+        font-size: 14px;
+        
+    }
+ }
 }

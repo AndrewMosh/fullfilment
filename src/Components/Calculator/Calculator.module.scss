@@ -1,5 +1,5 @@
 .calculator {
-    width: 844px;
+    max-width: 100%;
     background-color: white;
     padding: 32px;
     border-radius: 24px;
@@ -8,6 +8,11 @@
     flex-direction: column;
     line-height: 28px;
     gap:40px;
+   
+    @media screen and (max-width: 1348px) {
+        order: 2;
+        
+    }
     .checkboxes {
         z-index: 2;
     }
@@ -48,15 +53,34 @@
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    @media screen and (max-width: 536px) {
+        flex-direction: column;
+        align-items: center;
+        
+    }
   }
     .title {
         h1 {
             font-size: 40px;
             margin: 0;
+            white-space: nowrap;
+            @media screen and (max-width: 1348px) {
+                font-size: 32px;
+            }
+            @media screen and (max-width: 825px) {
+                font-size: 24px;
+            }
+            @media screen and (max-width: 412px) {
+                white-space: wrap;
+            }
         }
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        gap: 20px;
+        @media screen and (max-width: 656px) {
+            flex-direction: column;
+        }
     }
     .services {
         h2 {
@@ -74,10 +98,14 @@
                         font-size: 16px;
                         margin-left: 8px;
                         cursor:  pointer;
+                        @media screen and (max-width: 609px) {
+                           line-height: 25px;
+                            
+                        }
                 }
                 .customCheckbox {
                     cursor:pointer;
-                    width: 24px;
+                    min-width: 24px;
                     height: 24px;
                     border-radius: 2px;
                     appearance: none;
@@ -99,10 +127,15 @@
         gap:4px;
         margin-top: 9px;
         margin-bottom: 40px;
+        @media screen and (max-width: 609px) {
+            flex-direction: column;
+            
+        }
         input {
             padding: 16px;
             border: 2px solid #D2D4D8;
             border-radius: 16px;
+            min-width: 60px;
             cursor:  pointer;
             &:focus {
                 border: 2px solid #0250EE;
@@ -117,12 +150,14 @@
         flex-direction: column;
         gap:16px;
         position: relative;
-
+img {
+    width: fit-content;
+}
         .checkboxes {
             position: absolute;
             width: 100%;
             top:65px;
-            max-width: 780px;
+            max-width: 833px;
             background-color: white;
             border-radius: 24px;
             box-shadow: 0px 0.249px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.599px 1.5px 0px rgba(38, 39, 40, 0.04), 0px 1px 3px 0px rgba(38, 39, 40, 0.05), 0px 2px 5px 0px rgba(38, 39, 40, 0.06), 0px 4px 9px 0px rgba(38, 39, 40, 0.08), 0px 8px 20px 0px rgba(38, 39, 40, 0.10);
@@ -134,6 +169,11 @@
                 padding: 16px 8px; 
                 gap: 16px;
                 padding: 32px 24px;
+                
+                @media screen and (max-width: 609px) {
+                    padding: 16px 16px;
+                    
+                }
                 .address {
                     display: flex;
                     justify-content: space-between;
@@ -145,21 +185,37 @@
                     font-size: 16px;
                     margin-left: 16px;
                     cursor:  pointer;
+                   
                 }
                 .inputCenter {
                     display: flex;
                     align-items: center;
-                    
+                    @media screen and (max-width: 609px) {
+                        font-size: 14px;
+                        
+                    }
                 }
                 .place {
                     font-size: 14px;
                     color: #8A93A6;
                     font-weight: 300;
                     padding-left: 50px;
+                    @media screen and (max-width: 609px) {
+                        font-size: 12px;
+                        padding-right: 16px;
+                        line-height: 16px;
+                       
+                    }
                 }
                 .price {
                     font-size: 20px;
                     font-weight: bold;
+                    white-space: nowrap;
+                    align-self: center;
+                    @media screen and (max-width: 609px) {
+                        font-size: 16px;
+                        line-height: 16px;
+                    }
                 }
                 .per {
                     color: #8A93A6;
@@ -205,7 +261,6 @@
             cursor: pointer;
             padding: 16px 0;
             width: 95%;
-            height: 100%;
             outline:none;
             border: none;
             caret-color: transparent;

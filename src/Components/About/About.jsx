@@ -1,6 +1,8 @@
 import styles from './About.module.scss'
 import { ABOUT } from '../../utils/ABOUT'
 import { TallCard, ShortCard } from '../UI/Cards/Cards'
+import RuslanAbout from '../../assets/images/RuslanAbout.png'
+
 const About = () => {
 
     return (
@@ -8,11 +10,11 @@ const About = () => {
 <div className={styles.container}>
     <div className={styles.wrapper}>
 {ABOUT.map(item => (
-    item.tall && <TallCard title={item.title} text={item.text} /> 
+    item.tall && <TallCard title={item.title} text={item.text} img={RuslanAbout} /> 
 ))}
 <div className={styles.cards}>
    {ABOUT.map(item => (
-    !item.tall && <ShortCard title={item.title} text={item.text} />
+    !item.tall && <ShortCard title={item.title} text={item.text} img={item.pic} />
    ))}
 </div>
     </div>

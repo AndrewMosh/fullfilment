@@ -5,7 +5,7 @@ import { PACKAGE } from '../../utils/PACKAGe';
 import styles from './Calculator.module.scss';
 import down from '../../assets/images/down.svg';
 import up from '../../assets/images/up.svg';
-import { ButtonBlueWithoutLink, ButtonTransparent, ButtonClear, ButtonError } from '../UI/Buttons/Buttons';
+import { ButtonBlueWithoutLink, ButtonTransparent, ButtonClear, ButtonError, ButtonTransparentDownload } from '../UI/Buttons/Buttons';
 import CalculationResult from '../CalculationResult/CalculationResult';
 const Calculator = () => {
   const [itemsQuantity, setItemsQuantity] = useState('');
@@ -139,7 +139,7 @@ useEffect(() => {
     <div className={styles.calculator}>
       {!result ? <><div className={styles.title}>
       <h1>Узнайте стоимость услуг</h1>
-      <ButtonTransparent>Скачать прайс-лист</ButtonTransparent>
+      <ButtonTransparentDownload buttonText='Скачать прайс-лист' />
       </div>
         <div className={styles.popup}>
         <div style={{border:popup?'2px solid #0250EE': error.logistics?'2px solid #DB063B':'2px solid #A9B0BE'}} className={styles.inputContainer}  onClick={showModal}>

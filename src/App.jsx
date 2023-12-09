@@ -24,10 +24,10 @@ function App() {
       <Advantages/>
       <Proccesses/>
      <Fbo/>
-       {/* <CalculatorSection/>
-      <Map/>
-      <Faq/>
-      <Footer /> */}
+      <CalculatorSection/>
+       <Map/>
+       <Faq/>
+      <Footer />
     </>
   )
 }

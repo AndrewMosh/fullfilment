@@ -3,30 +3,31 @@ import { ButtonBlueDownload } from '../Buttons/Buttons'
 import down from '../../../assets/images/ChevronDown.svg'
 import up from '../../../assets/images/ChevronUp.svg'
 
-export const ShortCard = ({title, text}) => {
+export const ShortCard = ({title, text, img}) => {
     return (
         <div className={styles.card + ' ' + styles.short}>
             <div className={styles.content}>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.text}>{text}</p>
             </div>
-            
-                {/* <img className={styles.image} src={short} alt="pic" /> */}
-       
+            <div className={styles.imageContainer}>
+            <img className={styles.img} src={img} alt="pic"  />
+            </div> 
         </div>
     )
 }
 
-export const TallCard = ({title, text}) => {
+export const TallCard = ({title, text, img}) => {
     return (
         <div className={styles.card + ' ' + styles.tall}>
             <div className={styles.content}>
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.text}>{text}</p>
+           
             </div>
-            
-                {/* <img className={styles.image} src={circle} alt="pic" /> */}
-       
+           
+            <img className={styles.image} src={img} alt="pic" />  
+               
         </div>
     )
 }

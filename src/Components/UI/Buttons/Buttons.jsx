@@ -13,13 +13,13 @@ export const ButtonBlue = ({ link , text}) => {
     )
 }
 
-export const ButtonBlueSocials = ({ link , text}) => {
+export const ButtonBlueSocials = ({ link , text, img}) => {
     return (
         <button
             className={styles.btn + ' ' + styles.blue + ' ' + styles.socials}
         >
              <a href={link} target='_blank'>
-            {text}
+           <img src={img} alt="icon" /> {text}
             </a>
         </button>
     )
@@ -66,6 +66,17 @@ export const ButtonTransparentPhone = ({children}) => {
             {children}
             </a>
         </button>
+    ) 
+}
+export const ButtonTransparentDownload = ({buttonText, download, link}) => {
+    return (
+        <button
+        className={styles.btn + ' ' + styles.transparent+ ' '+styles.transparentDownload}
+    >
+         <a href={link} download={download}>
+        {buttonText}
+        </a>
+    </button>
     ) 
 }
 export const ButtonSocials = ({children}) => {
