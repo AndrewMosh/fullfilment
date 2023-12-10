@@ -147,27 +147,40 @@ background-color: rgba(8, 10, 15, 0.05);
             flex-direction: column;
             
         }
-        div {
+        .paramsContainer {
             border: 2px solid #D2D4D8;
             border-radius: 16px;
             min-width: 60px;
             padding: 16px;
            white-space: nowrap;
             cursor:  pointer;
-            label {
+            .box {
                 color:#6F7A91;
                 font-size: 16px;
-            }
-            input {
+              display: flex;
+              @media screen and (max-width: 652px) {
+                justify-content: space-between;
+                  
+              }
+              input {
                 border: none;
                 width:24px;
                 font-size: 16px;
                 outline: none;
+                align-self: center;
+                padding-top: 3px;
+                
                 &::placeholder {
                     font-size: 16px;
-                
+                    @media screen and (max-width: 652px) {
+                        text-align: right;
+                          
+                      }
+               
                 }
             }
+            }
+          
         }
         
     }

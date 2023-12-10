@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+
   }
   @media screen and (min-width: 857px) {
     .burgerMenu {
@@ -30,6 +31,7 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    
   }
   @media screen and (max-width: 350px) {
     .menu {

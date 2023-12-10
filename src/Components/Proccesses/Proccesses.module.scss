@@ -13,16 +13,16 @@
             flex-direction: column;
             gap: 240px;
             @media screen and (max-width: 1209px) {
-              padding: 40px 40px;
+              padding: 128px 40px;
             }
            
             @media screen and (max-width: 825px) {
-              padding: 16px 20px; 
+              padding: 240px 20px; 
               gap:128px;
             }
           
             @media screen and (max-width: 430px) {
-             padding: 16px 16px;
+             padding: 96px 16px;
              gap: 72px;
         }
       }

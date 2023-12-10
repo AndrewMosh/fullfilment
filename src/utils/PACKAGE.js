@@ -40,7 +40,7 @@ export const PACKAGE = [
         from2001:1500,
         all:false,
         weight:'до 350 кг',
-        info:'Без учета внутренних оплат',
+        info:'(Без учета внутренних оплат)',
         applied:false,
         once:true
     },
@@ -54,7 +54,7 @@ export const PACKAGE = [
         from2001:1500,
         all:false,
         weight:'до 350 кг',
-        info:'Без учета внутренних оплат',
+        info:'(Без учета внутренних оплат)',
         applied:false,
      
     },

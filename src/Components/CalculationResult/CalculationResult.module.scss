@@ -9,11 +9,9 @@
   .info {
     display: grid;
     gap:4px;
-    grid-template-columns:  minmax(192px, 1fr) minmax(192px, 1fr) minmax(192px, 1fr) minmax(192px, 1fr);
-    @media screen and (max-width: 871px) {
-      grid-template-columns:  minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
-    }
-    @media screen and (max-width: 565px) {
+    grid-template-columns:  minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) ;
+   
+    @media screen and (max-width: 703px) {
       grid-template-columns:  minmax(200px, 1fr) minmax(200px, 1fr) ;
     }
     @media screen and (max-width: 503px) {
@@ -33,6 +31,7 @@
   .title {
     font-size: 40px;
     white-space: nowrap;
+    font-family: 'Inter bold';
     @media screen and (max-width: 871px) {
       font-size: 32px;
     }
@@ -51,6 +50,8 @@
     color:#0250EE;
     font-size: 60px;
     margin-bottom: 15px;
+    font-family: 'Inter bold';
+   
     @media screen and (max-width: 871px) {
       font-size: 40px;
     }

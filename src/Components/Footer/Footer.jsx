@@ -11,11 +11,11 @@ const Footer = () => {
                         <img src={logo} alt="Company Logo" />
                         <div className={styles.ceo}>
                             <div>Индивидуальный предприниматель</div>
-                            <div>Аккузин Руслан Жарсельевич</div>
+                            <div>Аккузин Руслан Марсельевич</div>
                         </div>
                     </div>
                     <div className={styles.copyright}>
-                        ©{new Date().getFullYear()} Company Name
+                        ©Copyright {new Date().getFullYear()} 
                     </div>
                     <a href='https://taplink.cc/m_links' target='_blank' rel='noopener noreferrer'>
                         Написать дизайнеру

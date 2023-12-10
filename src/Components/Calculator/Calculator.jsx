@@ -221,8 +221,8 @@ const Calculator = () => {
               </h2>
               <small>Укажите минимальные размеры единицы товара (ДхВхШ не более 60х40х40см)</small>
               <div className={styles.inputs}>
-                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
-                  <label htmlFor="length"> Длина:
+                <div className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                  <div className={styles.box}> <div>Длина:</div>
                 <input
                   placeholder='60'
                   type='text'
@@ -230,10 +230,10 @@ const Calculator = () => {
                   value={lengthBox}
                   onChange={handleLengthBox}
                 />
-                </label>
                 </div>
-                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
-                <label htmlFor="height"> Высота:
+                </div>
+                <div className={styles.paramsContainer} style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div className={styles.box}> <div>Высота:</div>
                 <input
                   placeholder='40'
                   type='text'
@@ -241,10 +241,10 @@ const Calculator = () => {
                   value={height}
                   onChange={handleHeight}
                 />
-                </label>
                 </div>
-                <div  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
-                  <label htmlFor="width"> Ширина:
+                </div>
+                <div  className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                  <div className={styles.box}> <div>Ширина:</div>
                 <input
                   placeholder='40'
                   type='text'
@@ -252,10 +252,10 @@ const Calculator = () => {
                   value={width}
                   onChange={handleWidth}
                 />
-                </label>
                 </div>
-                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
-                <label htmlFor="quantity"> Количество:
+                </div>
+                <div className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div className={styles.box}> <div>Количество:</div>
                 <input
                   placeholder={itemsQuantity===0 || itemsQuantity===''? '1000' : itemsQuantity}
                   style={{ width:'60px' }}
@@ -264,7 +264,7 @@ const Calculator = () => {
                   value={itemsQuantity}
                   onChange={(e) => setItemsQuantity(+e.target.value)}
                 />
-                </label>
+                </div>
                 </div>
               </div>
             </div>
