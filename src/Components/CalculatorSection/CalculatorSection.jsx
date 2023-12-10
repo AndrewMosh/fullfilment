@@ -5,7 +5,7 @@ import Contacts from '../Contacts/Contacts';
 
 const CalculatorSection = () => {
     return (
-        <section id={'address'}   className={styles.calculatorSection}>
+        <section   className={styles.calculatorSection}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                     {/* Используйте комментарии, чтобы объяснить структуру разметки и компонентов */}
