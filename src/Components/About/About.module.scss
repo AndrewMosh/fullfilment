@@ -33,6 +33,7 @@
      grid-template-columns: repeat(2, minmax(200px,708px)) ;
      gap: 28px;
      justify-content: center;
+     
      @media screen and (max-width: 430px) {
         gap: 16px;
        }

@@ -18,8 +18,7 @@ const Contacts = () => {
                 </div>
                 <div className={styles.text}>или напишите в мессенджере:</div>
             </div>
-            {/* Используйте атрибут "alt" для добавления альтернативного текста для изображения */}
-            <img className={styles.image} src={RuslanContacts} alt="Ruslan Contacts" />
+            <img className={styles.image} src={RuslanContacts} alt="Ruslan Contacts" /> 
         </div>
     );
 }

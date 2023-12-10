@@ -173,15 +173,11 @@ const Calculator = () => {
               onClick={showModal}
              
             >
-              <input
+              <div
                 className={styles.input}
-                defaultValue={addresses}
-                // value={addresses}
-                placeholder='Выберите адрес отгрузки товара'
-                type='text'
-                
-              />
-              <img onClick={showModal} src={popup ? up : down} alt='choose' />
+              >
+                {addresses.length > 0? addresses.join('; ') : <div className={styles.placeholder}>Выберите адрес отгрузки<span style={{display:addresses.length === 0 ? 'inline' : 'none', color:'#DB063B'}}>*</span></div>}
+               </div><img onClick={showModal} src={popup ? up : down} alt='choose' />
             </div>
             {popup && (
               <div className={styles.checkboxes}>
@@ -203,7 +199,6 @@ const Calculator = () => {
                             }}
                           />
                           <label htmlFor={item.place} className={styles.name}>
-                            {' '}
                             {item.name}
                           </label>
                         </div>
@@ -222,42 +217,55 @@ const Calculator = () => {
             <div className={styles.overlay} style={{ display: popup ? 'flex' : 'none' }}></div>
             <div className={styles.params}>
               <h2>
-                <span style={{ color: 'red' }}>*</span>Заполните параметры товара
+                Заполните параметры товара<span style={{ color: 'red' }}>*</span>
               </h2>
               <small>Укажите минимальные размеры единицы товара (ДхВхШ не более 60х40х40см)</small>
               <div className={styles.inputs}>
+                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                  <label htmlFor="length"> Длина:
                 <input
-                  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}
-                  placeholder='Длина: 60'
-                  type='number'
+                  placeholder='60'
+                  type='text'
                   id='length'
                   value={lengthBox}
                   onChange={handleLengthBox}
                 />
+                </label>
+                </div>
+                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <label htmlFor="height"> Высота:
                 <input
-                  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}
-                  placeholder='Высота: 40'
-                  type='number'
+                  placeholder='40'
+                  type='text'
                   id='height'
                   value={height}
                   onChange={handleHeight}
                 />
+                </label>
+                </div>
+                <div  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                  <label htmlFor="width"> Ширина:
                 <input
-                  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}
-                  placeholder='Ширина: 40'
-                  type='number'
+                  placeholder='40'
+                  type='text'
                   id='width'
                   value={width}
                   onChange={handleWidth}
                 />
+                </label>
+                </div>
+                <div style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <label htmlFor="quantity"> Количество:
                 <input
-                  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}
-                  placeholder='Количество:1000'
-                  type='number'
+                  placeholder={itemsQuantity===0 || itemsQuantity===''? '1000' : itemsQuantity}
+                  style={{ width:'60px' }}
+                  type='text'
                   id='quantity'
                   value={itemsQuantity}
                   onChange={(e) => setItemsQuantity(+e.target.value)}
                 />
+                </label>
+                </div>
               </div>
             </div>
             <div className={styles.services}>
@@ -266,6 +274,7 @@ const Calculator = () => {
                 {packages.map((item) => (
                   !item.default && (
                     <div key={item.id}  className={styles.servicesContainer}>
+                      <div>
                       <input
                         className={styles.customCheckbox}
                         checked={item.applied}
@@ -277,10 +286,12 @@ const Calculator = () => {
                         }}
                       />
                       <label className={styles.name} style={{ lineHeight: item.weight ? '16px' : '28px' }} htmlFor={item.name}>
-                        {' '}
+                   
                         {item.name} {item.weight ? <span className={styles.weight}>{item.weight}</span> : ''} <br />
-                        {item.info ? <small style={{ color: '#8A93A6', fontSize: '12px' }}>{item.info}</small> : ''}
+                   
                       </label>
+                      </div>
+                      {item.info ? <small style={{ color: '#A9B0BE', fontSize: '12px', paddingLeft: '40px', lineHeight: '16px' }}>{item.info}</small> : ''}
                     </div>
                   )
                 ))}

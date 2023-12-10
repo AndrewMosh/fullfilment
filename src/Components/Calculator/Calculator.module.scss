@@ -60,12 +60,18 @@
     }
   }
     .title {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
         h1 {
             font-size: 40px;
             margin: 0;
             white-space: nowrap;
             @media screen and (max-width: 1348px) {
                 font-size: 32px;
+            }
+            @media screen and (max-width: 656px) {
+                flex-direction: column;
             }
             @media screen and (max-width: 825px) {
                 font-size: 24px;
@@ -74,17 +80,13 @@
                 white-space: wrap;
             }
         }
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 20px;
-        @media screen and (max-width: 656px) {
-            flex-direction: column;
-        }
+        
+       
     }
     .services {
         h2 {
             font-size: 20px;
+            padding-bottom: 16px;
         }
         .inputWrapper {
             display: flex;
@@ -92,12 +94,19 @@
             align-items: baseline;
             gap:10px;
             .servicesContainer {
-                display: flex;
-                align-items: center;
-                .name {
+               display: flex;
+               flex-direction: column;
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    .name {
                         font-size: 16px;
                         margin-left: 8px;
                         cursor:  pointer;
+                        .weight {
+                            color :#8A93A6;
+                        }
                         @media screen and (max-width: 609px) {
                            line-height: 25px;
                             
@@ -110,14 +119,20 @@
                     border-radius: 2px;
                     appearance: none;
                     background-color: rgba(8, 10, 15, 0.15);
+                    &:hover {
+background-color: rgba(8, 10, 15, 0.05);
+                    }
                     &:checked{
                         background-image: url('../../assets/images/Check.svg');
                         background-color: #0250EE;
                     }
                     &:active {
-                        background-color: rgba(8, 10, 15, 0.05);
+                        background-color:#0346ce;
                     }
                 }
+
+                }
+               
             }
            
         }
@@ -131,19 +146,29 @@
             flex-direction: column;
             
         }
-        input {
-            padding: 16px;
+        div {
             border: 2px solid #D2D4D8;
             border-radius: 16px;
             min-width: 60px;
+            padding: 16px;
+           
             cursor:  pointer;
-            &:focus {
-                border: 2px solid #0250EE;
-            }
-            &::placeholder {
+            label {
+                color:#6F7A91;
                 font-size: 16px;
             }
+            input {
+                border: none;
+                width:24px;
+                font-size: 16px;
+                outline: none;
+                &::placeholder {
+                    font-size: 16px;
+                
+                }
+            }
         }
+        
     }
     .popup {
         display: flex;
@@ -156,7 +181,7 @@ img {
         .checkboxes {
             position: absolute;
             width: 100%;
-            top:65px;
+            top:75px;
             max-width: 833px;
             background-color: white;
             border-radius: 24px;
@@ -177,11 +202,11 @@ img {
                 .address {
                     display: flex;
                     justify-content: space-between;
-                   
+                   align-items: center;
                     
                 }
                 .name {
-                    font-weight: bold;
+                   
                     font-size: 16px;
                     margin-left: 16px;
                     cursor:  pointer;
@@ -191,14 +216,16 @@ img {
                     display: flex;
                     align-items: center;
                     @media screen and (max-width: 609px) {
-                        font-size: 14px;
-                        
+                        font-size: 14px; 
+                    }
+                    label {
+                        font-family: 'Inter bold';
                     }
                 }
                 .place {
                     font-size: 14px;
                     color: #8A93A6;
-                    font-weight: 300;
+                   line-height: 20px;
                     padding-left: 50px;
                     @media screen and (max-width: 609px) {
                         font-size: 12px;
@@ -209,9 +236,9 @@ img {
                 }
                 .price {
                     font-size: 20px;
-                    font-weight: bold;
+               
                     white-space: nowrap;
-                    align-self: center;
+                    line-height: 21px;
                     @media screen and (max-width: 609px) {
                         font-size: 16px;
                         line-height: 16px;
@@ -220,7 +247,8 @@ img {
                 .per {
                     color: #8A93A6;
                     font-size: 12px;  
-                    font-weight: 300;
+                   
+            
                 }
                 .customCheckbox {
                     cursor:  pointer;
@@ -250,23 +278,23 @@ img {
             justify-content: space-between;
             background-color: white;
             position: relative;
-            &::after {
-                content: '*';
-                position: absolute;
-             color: red;
-             top: 6px;
-             left: 15px;
+            overflow: hidden;
+            .placeholder {
+                color:#6F7A91;
+                font-size: 16px;
             }
             .input {
             cursor: pointer;
+            font-size: 16px;
             padding: 16px 0;
+            overflow: hidden;
+       white-space: nowrap;
             width: 95%;
-            outline:none;
-            border: none;
-            caret-color: transparent;
+            max-width: 664px;
+         
             color:black;
             text-overflow: ellipsis;
-            position: relative;
+            
           
             }   
         }

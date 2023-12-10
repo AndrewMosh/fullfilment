@@ -1,20 +1,22 @@
-import defaultImage from '../assets/images/longCard.png';
+import provide from '../assets/images/provide.svg';
+import payment from '../assets/images/payment.svg';
+import agreement from '../assets/images/agreement.svg';
 export const PROCCESSES = [
     {
         title:'Подписание документов',
         text:'Для построения долгосрочного сотрудничества, мы стремимся к взаимопониманию и удовлетворению обеих сторон, гарантируя, что каждый пункт договора отвечает вашим интересам',
-        image:defaultImage,
+        image:agreement,
         button:true
     },
     {
         title:'Оплата на расчетный счет',
         text:'Мы обеспечиваем прозрачные механизмы оплаты, предоставляем необходимую документацию для достижения вашего удобства и безопасности',
-        image:defaultImage,
+        image:payment,
     },
     {
         title:'Поставка товара',
         text:'Для построения долгосрочного сотрудничества, мы стремимся к взаимопониманию и удовлетворению обеих сторон, гарантируя, что каждый пункт договора отвечает вашим интересам.',
-        image:defaultImage,
+        image:provide,
     },
     
 ]

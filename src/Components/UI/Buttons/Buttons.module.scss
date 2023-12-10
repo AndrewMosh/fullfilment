@@ -1,6 +1,5 @@
 .btn {
-
-    display: inline-flex;
+display: flex;
 padding: 16px 32px;
 text-align: center;
 border-radius: 40px;
@@ -9,8 +8,10 @@ align-items: center;
 white-space: nowrap;
 gap:9px;
 align-self: baseline;
+transition: all 0.4s ease-in-out;
 @media screen and (max-width: 430px) {
     padding: 16px 24px;
+    font-size: 14px;
    }
 a {
     text-decoration: none;
@@ -62,10 +63,12 @@ a {
     }
 }
 .empty {
+
     background-color: transparent;
     a {
         text-decoration: none;
         color: #0250EE;
+        transition: all 0.4s ease-in-out;
         &:hover {
             color: #206EFF; 
          }

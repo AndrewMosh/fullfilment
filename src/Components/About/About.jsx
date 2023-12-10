@@ -3,7 +3,7 @@ import styles from './About.module.scss';
 import { ABOUT } from '../../utils/ABOUT';
 import { TallCard, ShortCard } from '../UI/Cards/Cards';
 import RuslanAbout from '../../assets/images/RuslanAbout.png';
-
+import ellipse from '../../assets/images/Ellipse.png';
 // Создадим компонент для отображения карточек
 const renderCards = (aboutData) => (
   <div className={styles.cards}>
@@ -20,7 +20,7 @@ const About = () => {
         <div className={styles.wrapper}>
           {/* Отрисовка карточек с высокими блоками */}
           {ABOUT.filter((item) => item.tall).map((item) => (
-            <TallCard key={item.title} title={item.title} text={item.text} img={RuslanAbout} />
+            <TallCard key={item.title} title={item.title} text={item.text} img1={RuslanAbout} img2={ellipse} />
           ))}
 
           {/* Отрисовка карточек с низкими блоками */}

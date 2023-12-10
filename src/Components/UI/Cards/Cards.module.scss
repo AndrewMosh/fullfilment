@@ -1,10 +1,7 @@
 .card {
-    // max-width:408px;
     background-color: white;
     border-radius: 24px;
     display: flex;
-    // padding: 32px;
-    // justify-content: space-between;
     box-shadow: 0px 0.3px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.8px 2px 0px rgba(38, 39, 40, 0.04), 0px 1.5px 3.5px 0px rgba(38, 39, 40, 0.05), 0px 3px 5px 0px rgba(38, 39, 40, 0.05), 0px 4px 16px 0px rgba(38, 39, 40, 0.06);
     .title {
         font-size: 20px;
@@ -26,15 +23,12 @@
     padding: 16px;
     border-radius: 16px;
     background-color: rgba(138, 147, 166, 0.10);
-    line-height: 16px;
-//    max-width: 192px;
-   
+    line-height: 16px;   
     .content {
         display: flex;
         justify-content: space-between;
         color: #6F7A91;
-        font-size: 12px;
-        
+        font-size: 12px;   
     }
     .title {
         color: #6F7A91;
@@ -130,7 +124,10 @@
      }
    .content {
     padding: 32px;
-   
+   display: flex;
+   flex-direction: column;
+   gap:24px;
+   align-items: flex-start;
   
    }
    .titleAdvantages {
@@ -154,29 +151,24 @@
     align-self: flex-end;
    }
   
-    .image {
-      transform: scale(1.3);
-      position: relative;
-      bottom: -7%;
-      right: -10%;
-      @media  screen and (max-width: 1160px) {
-        transform: scale(1);
-        width:400px;
-        right: -5%;
-        bottom: -20%;
-      
-     }
-     @media  screen and (max-width: 733px) {
-        transform: scale(1.3);
-      align-self: flex-end;
-      bottom: -10%;
-      
-     }
-     @media  screen and (max-width: 451px) {
-        transform: scale(1);
-     }
-    
-   }
+  .imageContainer {
+    align-self: flex-end;
+    position: relative;
+    margin-top: 30px;
+    .img1 {
+        bottom: -5px;
+        right: -5px;
+        z-index: 2;
+             position: absolute;
+             max-width: 408px;
+             max-width: 100%;
+    }
+    .img2 {
+position: relative;
+right: -20px;
+     bottom: -20px; 
+    }
+        }
    
 }
 .long {
@@ -205,21 +197,42 @@
     }
 }
 .short {
+    background-color: white;
+    border-radius: 24px;
+    display: grid;
     padding: 32px;
-    justify-content: space-between;
-    gap: 5px;
-    align-items: center;
+    grid-template-columns: 1.5fr 1fr;
+    
+    box-shadow: 0px 0.3px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.8px 2px 0px rgba(38, 39, 40, 0.04), 0px 1.5px 3.5px 0px rgba(38, 39, 40, 0.05), 0px 3px 5px 0px rgba(38, 39, 40, 0.05), 0px 4px 16px 0px rgba(38, 39, 40, 0.06);
+    .title {
+        font-size: 20px;
+        margin-top:0;
+    }
+    .text {
+        font-size: 14px;
+        color:#6F7A91;
+        margin-bottom: 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      
+    }
     .title {
         white-space: nowrap;
     }
-    .imageContainer {
-        width: 110%;
-        text-align: right;
-        .img {
-            max-width: 100%;
-            min-width:50px
-    }
-    }
+   .imageContainer {
+  text-align: end;
+  align-self: flex-end;
+    .img {
+max-width: 100%;
+min-width: 50px;
+       
+      
+}
+   }
+       
 }
 .proccess {
     padding: 32px;

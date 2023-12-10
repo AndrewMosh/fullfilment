@@ -18,7 +18,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
 
       {isOpen && (
         <div className={styles.menu}>
-            <img style={{position:  "fixed", top: "16px", left: "18px"}} src={logo} alt="logo" />
+            <img style={{position:  "fixed", top: "16px", left: "20px"}} src={logo} alt="logo" />
           <ul className={styles.menuList}>
             {MENU.map((item) => (
               <li key={item}>

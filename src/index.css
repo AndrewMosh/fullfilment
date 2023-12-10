@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Inter';
   font-style:  normal;
-  font-weight: 400;
+
   font-display: swap;
   src: url("./assets/fonts/Inter-Regular.ttf");
 
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'Inter Normal';
   font-style:  normal;
-  font-weight: 500;
+
   font-display: swap;
   src: url("./assets/fonts/Inter-Medium.ttf");
 
@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'Inter Bold';
   font-style:  normal;
-  font-weight: 600;
+
   font-display: swap;
   src: url("./assets/fonts/Inter-SemiBold.ttf");
 
@@ -51,4 +51,8 @@ button {
 }
 input {
   caret-color: #0250EE;
+}
+h1, h2, p, ul {
+  margin: 0;
+  font-weight: 100;
 }

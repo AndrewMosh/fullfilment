@@ -1,6 +1,5 @@
 .header {
   background-color: white;
-
   .container {
       max-width: 1440px;
        margin: 0 auto;
@@ -31,16 +30,26 @@ padding: 16px 80px;
       ul {
         display: flex;
         align-items: center;
+       padding: 0;
+       
         li {
           margin-right: 16px;
           list-style: none;
-          
+         
           &:last-child {
             margin-right: 0;
           }
           a {
             color: black;
             text-decoration: none;
+            transition: all 0.4s ease-in-out;
+            font-size: 14px;
+            &:hover {
+              color: #206EFF;
+            }
+            &:active {
+              color:#0240BE;
+            }
         }
         }
       }
@@ -50,7 +59,7 @@ padding: 16px 80px;
     }
     .buttons {
         display: flex;
-        gap:10px;
+        gap:24px;
         justify-content: space-between;
         button {
           &:nth-child(1){
@@ -59,10 +68,8 @@ padding: 16px 80px;
             }
         }
         &:nth-child(2) {
-          padding-right: 0;
-          @media screen and (max-width: 1019px) {
-            display: none;
-          }
+          padding: 0;
+          
           @media screen and (max-width: 857px) {
             display: block;
             padding-top:0;

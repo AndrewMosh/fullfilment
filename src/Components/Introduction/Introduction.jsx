@@ -6,22 +6,27 @@ const Introduction = () => {
         <section className={styles.introduction}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-                <div className={styles.content}>
+               
                     <h1 className={styles.title}>
                     Фулфилмент, <br /> которому можно <br /> доверять
                     </h1>
                     <p className={styles.text}>
                     Надежно доставим ваш груз на склады <br /> маркетплейсов в Москве и МО
                     </p>
-                </div>
+               
                 <div className={styles.buttons}>
                     <ButtonBlue link='#calculator' text='Узнать стоимость'/>
                     <ButtonTransparentPhone>Позвонить</ButtonTransparentPhone>
                 </div>
+              
                 </div>
                 <div className={styles.image}> 
                 <img src={Intro} alt="intro" />
             </div>
+            <div className={styles.buttonsHidden}>
+                    <ButtonBlue link='#calculator' text='Узнать стоимость'/>
+                    <ButtonTransparentPhone>Позвонить</ButtonTransparentPhone>
+                </div>
             </div>
             
         </section>
