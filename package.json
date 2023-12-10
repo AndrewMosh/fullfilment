@@ -24,5 +24,15 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "sass": "^1.69.5",
     "vite": "^5.0.0"
-  }
+  },
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version",
+    "last 1 edge version",
+    "last 1 ios version",
+    "last 1 android version",
+    "last 1 samsung version",
+    "last 1 opera version"
+  ]
 }
