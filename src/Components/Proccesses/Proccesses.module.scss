@@ -8,21 +8,21 @@
         max-width: 1440px;
         margin: 0 auto;
         .wrapper {
-            padding: 128px 80px;
+            padding: 100px 80px;
             display: flex;
             flex-direction: column;
             gap: 120px;
             @media screen and (max-width: 1209px) {
-              padding: 128px 40px;
+              padding: 100px 40px;
             }
            
             @media screen and (max-width: 825px) {
-              padding: 160px 20px; 
+              padding: 100px 20px; 
               gap:100px;
             }
           
             @media screen and (max-width: 430px) {
-             padding: 96px 16px;
+             padding: 56px 16px;
              gap: 72px;
         }
       }
