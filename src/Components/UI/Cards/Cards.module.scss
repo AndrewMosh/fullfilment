@@ -152,12 +152,10 @@
     align-self: flex-end;
     position: relative;
     margin-top: 30px;
-   
+    box-sizing: border-box;
     .img1 {
-        bottom: -2.5px;
-        right: -2.5px;
-        margin-right: -2.5px;
-        margin-bottom: -2.5px;
+        bottom: -5px;
+        right: -10px;
         z-index: 2;
              position: absolute;
              min-width: 300px;
