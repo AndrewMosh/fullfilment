@@ -162,12 +162,13 @@ background-color: rgba(8, 10, 15, 0.05);
                 color:#6F7A91;
                 font-size: 16px;
               display: flex;
+              overflow: hidden;
               @media screen and (max-width: 652px) {
                 justify-content: space-between;
                   
               }
               .quantity {
-                max-width:60px;
+                width:60px;
                 @media screen and (max-width: 652px) {
                     width: 100%;
                      
