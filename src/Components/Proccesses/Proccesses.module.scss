@@ -11,19 +11,19 @@
             padding: 100px 80px;
             display: flex;
             flex-direction: column;
-            gap: 120px;
+            gap: 60px;
             @media screen and (max-width: 1209px) {
               padding: 100px 40px;
             }
            
             @media screen and (max-width: 825px) {
               padding: 100px 20px; 
-              gap:100px;
+              gap:30px;
             }
           
             @media screen and (max-width: 430px) {
              padding: 56px 16px;
-             gap: 72px;
+             gap: 20px;
         }
       }
     }

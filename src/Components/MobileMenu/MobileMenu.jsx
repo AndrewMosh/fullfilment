@@ -11,7 +11,7 @@ function MobileMenu({ isOpen, toggleMenu }) {
       <img
         className={styles.burger}
         onClick={toggleMenu}
-        style={{ position: isOpen ? "fixed" : "" }}
+        // style={{ position: isOpen ? "fixed" : "" }}
         src={isOpen ? open : closed}
         alt="menu"
       />
