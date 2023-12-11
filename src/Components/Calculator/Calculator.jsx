@@ -12,7 +12,7 @@ import {
   ButtonTransparentDownload
 } from '../UI/Buttons/Buttons';
 import CalculationResult from '../CalculationResult/CalculationResult';
-import useModal from '../Portals/useModal';
+import useModal from '../Portal/useModal';
 
 const Calculator = () => {
   const [itemsQuantity, setItemsQuantity] = useState('');

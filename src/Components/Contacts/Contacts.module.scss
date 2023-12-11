@@ -62,6 +62,8 @@ justify-content: space-between;
 max-width: 120%;
 bottom:-20px;
 right: -10%;
+
+margin-bottom: -10px;
             @media screen and (max-width: 1348px) {
              width: 300px;
              right:0 ;
@@ -69,6 +71,10 @@ right: -10%;
             }
             @media screen and (max-width: 551px) {
                 bottom:-25px;
+             }
+            @media screen and (max-width: 690px) {
+                bottom:-50px;
+              
              }
             
             

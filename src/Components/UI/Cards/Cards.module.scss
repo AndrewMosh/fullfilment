@@ -152,16 +152,16 @@
     align-self: flex-end;
     position: relative;
     margin-top: 30px;
+   
     .img1 {
-        bottom: -5px;
-        right: -10px;
+        bottom: -2.5px;
+        right: -2.5px;
+        margin-right: -2.5px;
+        margin-bottom: -2.5px;
         z-index: 2;
              position: absolute;
              min-width: 300px;
              max-width: 100%;
-             @media  screen and (max-width: 1160px) {
-               
-            }
     }
     .img2 {
 position: relative;
@@ -169,6 +169,7 @@ right: -20px;
      bottom: -20px; 
      max-width: 100%;
    min-width: 300px;
+   z-index: 1;
     }
         }
    
