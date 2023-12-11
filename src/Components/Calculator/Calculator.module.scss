@@ -69,7 +69,7 @@
         h1 {
             font-size: 40px;
             margin: 0;
-            white-space: nowrap;
+            
             @media screen and (max-width: 1348px) {
                 font-size: 32px;
             }
@@ -78,7 +78,7 @@
                 font-size: 24px;
             }
             @media screen and (max-width: 412px) {
-                white-space: wrap;
+               font-size: 22px;
             }
         }
         

@@ -57,18 +57,13 @@
     gap: 40px;
   .title {
         font-size: 60px;
-        white-space: nowrap;
         line-height: 72px;
         font-family: 'Inter bold';
         @media screen and (max-width: 1209px) {
           font-size: 40px;
           line-height: 48px;
         }
-        @media screen and (max-width: 375px) {
-      white-space: wrap;
-        
-        
-      }
+    
     }
     .text {
       color: #6F7A91;

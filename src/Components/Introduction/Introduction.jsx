@@ -8,10 +8,10 @@ const Introduction = () => {
                 <div className={styles.wrapper}>
                
                     <h1 className={styles.title}>
-                    Фулфилмент, <br /> которому можно <br /> доверять
+                    Фулфилмент, которому можно  доверять
                     </h1>
                     <p className={styles.text}>
-                    Надежно доставим ваш груз на склады <br /> маркетплейсов в Москве и МО
+                    Надежно доставим ваш груз на склады маркетплейсов в Москве и МО
                     </p>
                
                 <div className={styles.buttons}>
