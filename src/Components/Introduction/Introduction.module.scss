@@ -3,7 +3,7 @@
   margin: 0 auto;
   line-height: 28px;
   .image {
-    max-width: 100%; 
+    max-width: 792px; 
     text-align: center;
     img {
       width: 100%;
@@ -55,6 +55,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    max-width: 600px;
   .title {
         font-size: 60px;
         line-height: 72px;
@@ -68,6 +69,7 @@
     .text {
       color: #6F7A91;
       font-size: 20px;
+      max-width: 394px;
       @media screen and (max-width: 1209px) {
         font-size: 16px; 
       }
