@@ -59,8 +59,10 @@ a {
 .transparentDownload {
     @media screen and (max-width: 656px) {
         order:-1;
-        
+       width:100%;
+       justify-content: center;       
     }
+ 
 }
 .empty {
 
