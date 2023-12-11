@@ -265,7 +265,30 @@ right: -20px;
         justify-content: space-between;
         align-items: baseline;
         gap:40px;
-        
+        button {
+            @media screen and (max-width: 1100px) {
+                display: none
+              }
+        }
+    }
+    .images {
+    button {
+        display: none;
+        @media screen and (max-width: 1100px) {
+            display: block;
+          }
+    }
+       
+        @media screen and (max-width: 1100px) {
+            display: flex;
+            justify-content:space-between;
+           align-items:flex-end;
+          }
+          @media screen and (max-width: 598px) {
+            display: flex;
+           flex-direction: column;
+           gap:34px
+          }
     }
     .title {
         font-size: 40px;

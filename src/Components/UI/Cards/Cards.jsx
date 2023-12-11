@@ -67,9 +67,11 @@ export const ProccessCard = ({title, text, image,button, download, buttonText, l
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.text}>{text}</p>
             {button && <ButtonBlueDownload download={download} link={link} buttonText={buttonText}/>}
-           
             </div>
-            <img className={styles.image} src={image} alt='pic' />
+
+            {button ? <div className={styles.images}><ButtonBlueDownload download={download} link={link} buttonText={buttonText}/> <img className={styles.image} src={image} alt='pic' />
+            </div> : <img className={styles.image} src={image} alt='pic' />}
+            
         </div>
     )
 }
