@@ -53,7 +53,7 @@ justify-content: space-between;
      
     }
     @media screen and (max-width: 350px) {
-       transform: scale(0.9);
+        grid-template-columns: 1fr;
     
     }
     }
