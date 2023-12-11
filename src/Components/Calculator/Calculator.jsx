@@ -12,7 +12,7 @@ import {
   ButtonTransparentDownload
 } from '../UI/Buttons/Buttons';
 import CalculationResult from '../CalculationResult/CalculationResult';
-
+import useModal from '../Portals/useModal';
 
 const Calculator = () => {
   const [itemsQuantity, setItemsQuantity] = useState('');
@@ -21,7 +21,7 @@ const Calculator = () => {
   const [lengthBox, setLengthBox] = useState('');
   const [boxQuantity, setBoxQuantity] = useState('');
   const [total, setTotal] = useState('');
-  const [popup, setPopup] = useState(false);
+
   const [logistics, setLogistics] = useState(LOGISTICS);
   const [packages, setPackages] = useState(PACKAGE);
   const [error, setError] = useState({ params: false, logistics: false });
@@ -29,7 +29,7 @@ const Calculator = () => {
   const [addresses, setAddresses] = useState([]);
   const [result, setResult] = useState(false);
   const componentRef = useRef();
-
+  const { isModalOpen, openModal, closeModal, modalRef } = useModal();
   const scrollToTop = () => {
     componentRef.current.scrollIntoView();
   };
@@ -62,13 +62,6 @@ const Calculator = () => {
     }
   };
 
-  const showModal = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-  
-    
-    setPopup(!popup);
-  };
 
   const clearData = () => {
     setItemsQuantity('');
@@ -77,7 +70,7 @@ const Calculator = () => {
     setLengthBox('');
     setBoxQuantity('');
     setTotal('');
-    setPopup(false);
+    
     setLogistics(LOGISTICS);
     setPackages(PACKAGE);
     setError({ params: false, logistics: false });
@@ -150,6 +143,14 @@ const Calculator = () => {
     }
   };
 
+  const handleButtonClick = (e) => {
+    // Предотвращаем всплытие события, чтобы оно не достигло handleClickOutside
+    e.stopPropagation();
+    openModal();
+
+  };
+
+
   useEffect(() => {
     if (height !== '' && width !== '' && lengthBox !== '' && !error.params && itemsQuantity !== '') {
       setBoxQuantity(() =>
@@ -157,6 +158,7 @@ const Calculator = () => {
       );
     }
   }, [height, width, lengthBox, itemsQuantity, boxQuantity]);
+  
 
   return (
     <div id={'calculator'} className={styles.calculator} ref={componentRef}>
@@ -167,20 +169,21 @@ const Calculator = () => {
             <ButtonTransparentDownload buttonText='Скачать прайс-лист' />
           </div>
           <div className={styles.popup}>
+            <div className={styles.popupOverlay} style={{display:isModalOpen ? 'block' : 'none'}}></div>
             <div
-              style={{ border: popup ? '2px solid #0250EE' : error.logistics ? '2px solid #DB063B' : '2px solid #A9B0BE' }}
+              style={{ border: isModalOpen ? '2px solid #0250EE' : error.logistics ? '2px solid #DB063B' : '2px solid #A9B0BE' }}
               className={styles.inputContainer}
-              onClick={showModal}
              
+              onClick={handleButtonClick}
             >
               <div
                 className={styles.input}
               >
                 {addresses.length > 0? addresses.join('; ') : <div className={styles.placeholder}>Выберите адрес отгрузки<span style={{display:addresses.length === 0 ? 'inline' : 'none', color:'#DB063B'}}>*</span></div>}
-               </div><img onClick={showModal} src={popup ? up : down} alt='choose' />
+               </div><img  src={isModalOpen ? up : down} alt='choose' />
             </div>
-            {popup && (
-              <div className={styles.checkboxes}>
+            {isModalOpen && (
+              <div className={styles.checkboxes} ref={modalRef}>
                 <div className={styles.checkboxWrapper}>
                   {logistics.map((item) => (
                     <div key={item.place} className={styles.address}>
@@ -214,7 +217,7 @@ const Calculator = () => {
             )}
           </div>
           <div className={styles.overlayContainer}>
-            <div className={styles.overlay} style={{ display: popup ? 'flex' : 'none' }}></div>
+            <div className={styles.overlay} style={{ display: isModalOpen ? 'flex' : 'none' }}></div>
             <div className={styles.params}>
               <h2>
                 Заполните параметры товара<span style={{ color: 'red' }}>*</span>
@@ -244,7 +247,7 @@ const Calculator = () => {
                 </div>
                 </div>
                 <div  className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
-                  <div className={styles.box}> <div>Ширина:</div>
+                <div className={styles.box}> <div>Ширина:</div>
                 <input
                   placeholder='40'
                   type='text'
@@ -258,7 +261,7 @@ const Calculator = () => {
                 <div className={styles.box}> <div>Количество:</div>
                 <input
                   placeholder={itemsQuantity===0 || itemsQuantity===''? '1000' : itemsQuantity}
-                  style={{ width:'60px' }}
+                  className={styles.quantity}
                   type='text'
                   id='quantity'
                   value={itemsQuantity}
