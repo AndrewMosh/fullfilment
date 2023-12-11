@@ -9,8 +9,8 @@ white-space: nowrap;
 gap:9px;
 align-self: baseline;
 transition: all 0.4s ease-in-out;
-@media screen and (max-width: 430px) {
-    padding: 16px 24px;
+@media screen and (max-width: 463px) {
+    padding: 16px 16px;
     font-size: 14px;
    }
 a {
@@ -116,15 +116,15 @@ a {
 .socials {
    display: flex;
    justify-content: center;
-   min-width: 120px;
+//    min-width: 150px;
  a {
     display: flex;
     gap: 10px;
     align-items: center;
-
-    @media screen and (max-width: 430px) {
+    @media screen and (max-width: 463px) {
+        gap: 5px;
         font-size: 14px;
-        
     }
+  
  }
 }

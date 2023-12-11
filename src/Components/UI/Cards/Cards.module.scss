@@ -212,9 +212,14 @@ right: -20px;
     @media screen and (max-width: 1160px) {
         min-height: 170px;   
     }
+    @media screen and (max-width: 352px) {
+        grid-template-columns:  1fr;
+    
+    }
     .title {
         font-size: 20px;
         margin-top:0;
+        padding-bottom: 16px;
     }
     .text {
         font-size: 14px;
@@ -225,7 +230,7 @@ right: -20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-      
+       
     }
     .title {
         white-space: nowrap;

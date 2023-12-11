@@ -31,6 +31,10 @@ justify-content: space-between;
  }
     .content {
         font-size: 32px;
+        @media screen and (max-width: 350px) {
+            font-size: 1rem;
+        
+        }
       
     }
     .text {
@@ -46,6 +50,10 @@ justify-content: space-between;
        @media screen and (max-width: 1348px) {
         order:4;
      
+    }
+    @media screen and (max-width: 350px) {
+       transform: scale(0.9);
+    
     }
     }
     .image {          
