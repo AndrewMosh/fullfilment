@@ -167,7 +167,7 @@ background-color: rgba(8, 10, 15, 0.05);
                   
               }
               .quantity {
-                width:60px;
+                max-width:60px;
                 @media screen and (max-width: 652px) {
                     width: 100%;
                      
