@@ -111,8 +111,8 @@ const Calculator = () => {
   };
 
   const handleHeight = (e) => {
-    setHeight(e.target.value);
-    if (e.target.value > 40) {
+    setHeight(+e.target.value);
+    if (e.target.value > 40 ) {
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
     } else {
@@ -122,7 +122,7 @@ const Calculator = () => {
   };
 
   const handleWidth = (e) => {
-    setWidth(e.target.value);
+    setWidth(+e.target.value);
     if (e.target.value > 40) {
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
@@ -133,7 +133,7 @@ const Calculator = () => {
   };
 
   const handleLengthBox = (e) => {
-    setLengthBox(e.target.value);
+    setLengthBox(+e.target.value);
     if (e.target.value > 60) {
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
@@ -142,7 +142,10 @@ const Calculator = () => {
       setMessage('');
     }
   };
+  const handleQuantity = (e) => {
+    setItemsQuantity(+e.target.value);
 
+  };
   const handleButtonClick = (e) => {
     // Предотвращаем всплытие события, чтобы оно не достигло handleClickOutside
     e.stopPropagation();
@@ -228,7 +231,7 @@ const Calculator = () => {
                   <div className={styles.box}> <div>Длина:</div>
                 <input
                   placeholder='60'
-                  type='text'
+                  type='number'
                   id='length'
                   value={lengthBox}
                   onChange={handleLengthBox}
@@ -239,7 +242,7 @@ const Calculator = () => {
                 <div className={styles.box}> <div>Высота:</div>
                 <input
                   placeholder='40'
-                  type='text'
+                  type='number'
                   id='height'
                   value={height}
                   onChange={handleHeight}
@@ -250,7 +253,7 @@ const Calculator = () => {
                 <div className={styles.box}> <div>Ширина:</div>
                 <input
                   placeholder='40'
-                  type='text'
+                  type='number'
                   id='width'
                   value={width}
                   onChange={handleWidth}
@@ -262,10 +265,10 @@ const Calculator = () => {
                 <input
                   placeholder={itemsQuantity===0 || itemsQuantity===''? '1000' : itemsQuantity}
                   className={styles.quantity}
-                  type='text'
+                  type='number'
                   id='quantity'
                   value={itemsQuantity}
-                  onChange={(e) => setItemsQuantity(+e.target.value)}
+                  onChange={handleQuantity}
                 />
                 </div>
                 </div>
