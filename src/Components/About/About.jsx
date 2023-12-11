@@ -4,6 +4,7 @@ import { ABOUT } from '../../utils/ABOUT';
 import { TallCard, ShortCard } from '../UI/Cards/Cards';
 import RuslanAbout from '../../assets/images/RuslanAbout.png';
 import ellipse from '../../assets/images/Ellipse.png';
+
 // Создадим компонент для отображения карточек
 const renderCards = (aboutData) => (
   <div className={styles.cards}>

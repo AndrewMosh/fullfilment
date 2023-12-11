@@ -4,6 +4,7 @@ import { ADVANTAGES } from '../../utils/ADVANTAGES';
 import { TallCardAdvantages, LongCard } from '../UI/Cards/Cards';
 
 const Advantages = () => {
+  
   return (
     <section id="advantages" className={styles.advantages}>
       <div className={styles.container}>
