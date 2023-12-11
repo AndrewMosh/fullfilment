@@ -10,9 +10,12 @@
     gap:40px;
    
     @media screen and (max-width: 1348px) {
-        order: 2;
-        
+        order: 2;  
     }
+    @media screen and (max-width: 430px) {
+        padding: 24px;
+     
+       }
     .checkboxes {
         z-index: 2;
     }
@@ -100,7 +103,7 @@
                 div {
                     display: flex;
                     align-items: center;
-
+                   
                     .name {
                         font-size: 16px;
                         margin-left: 8px;
@@ -109,9 +112,9 @@
                             color :#8A93A6;
                         }
                         @media screen and (max-width: 609px) {
-                           line-height: 25px;
-                            
+                           line-height: 25px; 
                         }
+                       
                 }
                 .customCheckbox {
                     cursor:pointer;
@@ -130,6 +133,7 @@ background-color: rgba(8, 10, 15, 0.05);
                     &:active {
                         background-color:#0346ce;
                     }
+                    
                 }
 
                 }
