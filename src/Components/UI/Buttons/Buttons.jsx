@@ -16,7 +16,7 @@ export const ButtonBlue = ({ link , text}) => {
 export const ButtonBlueSocials = ({ link , text, img}) => {
     return (
         <button
-            className={styles.btn + ' ' + styles.blue + ' ' + styles.socials}
+            className={styles.btn + ' ' + styles.blue + ' ' + styles.socials + ' ' + styles.withMin}
         >
              <a href={link} target='_blank'>
            <img src={img} alt="icon" /> {text}

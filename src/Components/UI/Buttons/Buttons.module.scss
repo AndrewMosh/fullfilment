@@ -9,7 +9,7 @@ white-space: nowrap;
 gap:9px;
 align-self: baseline;
 transition: all 0.4s ease-in-out;
-min-width: 100px;
+
 @media screen and (max-width: 463px) {
     padding: 16px 16px;
     font-size: 14px;
@@ -17,6 +17,9 @@ min-width: 100px;
 a {
     text-decoration: none;
 }
+}
+.withMin {
+min-width: 100px;
 }
 .blue {
 
