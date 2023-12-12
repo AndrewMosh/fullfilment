@@ -30,7 +30,7 @@ body {
   background-color: #FBFBFC;
   font-family: 'Inter';
   scroll-behavior: smooth;
- 
+ box-sizing: border-box;
 }
 
 h1 {
@@ -63,12 +63,4 @@ h1, h2, p, ul {
     font-size:1em;
   }
   
-}
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
