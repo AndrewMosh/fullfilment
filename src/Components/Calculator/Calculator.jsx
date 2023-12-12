@@ -13,7 +13,7 @@ import {
 } from '../UI/Buttons/Buttons';
 import CalculationResult from '../CalculationResult/CalculationResult';
 import useModal from '../Portal/useModal';
-
+import pricelist from '../../assets/downloads/pricelist.jpeg'
 const Calculator = () => {
   const [itemsQuantity, setItemsQuantity] = useState('');
   const [height, setHeight] = useState('');
@@ -186,7 +186,7 @@ const Calculator = () => {
         <>
           <div className={styles.title}>
             <h1>Узнайте стоимость услуг</h1>
-            <ButtonTransparentDownload buttonText='Скачать прайс-лист' />
+            <ButtonTransparentDownload buttonText='Скачать прайс-лист' download={pricelist} link={pricelist} />
           </div>
           <div className={styles.popup}>
             <div className={styles.popupOverlay} style={{display:isModalOpen ? 'block' : 'none'}}></div>
