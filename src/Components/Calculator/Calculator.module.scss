@@ -16,6 +16,10 @@
         padding: 24px;
      
        }
+       @media screen and (max-width: 375px) {
+        padding: 16px;
+     
+       }
     .checkboxes {
         z-index: 2;
     }
