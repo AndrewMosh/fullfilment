@@ -5,7 +5,7 @@ import { ButtonRecalculate, ButtonTransparentDownload } from '../UI/Buttons/Butt
 import info from '../../assets/icons/info.svg';
 import pack from '../../assets/icons/package.svg';
 import transfer from '../../assets/icons/logistics.svg';
-
+import pricelist from '../../assets/downloads/pricelist.jpeg';
 const CalculationResult = ({
   handleRecalculate,
   width,
@@ -89,7 +89,7 @@ const CalculationResult = ({
           <div className={styles.title}>Примерная стоимость</div>
           <div className={styles.price}>{formattedPrice(total)} ₽</div>
         </div>
-        <ButtonTransparentDownload buttonText="Скачать прайс-лист" />
+        <ButtonTransparentDownload buttonText="Скачать прайс-лист" link={pricelist} download={pricelist} />
       </div>
       <div>
         <div className={styles.subhead}>

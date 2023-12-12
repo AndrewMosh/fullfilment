@@ -29,9 +29,12 @@ const Calculator = () => {
   const [addresses, setAddresses] = useState([]);
   const [result, setResult] = useState(false);
   const componentRef = useRef();
-  const { isModalOpen, openModal, closeModal, modalRef } = useModal();
+  const { isModalOpen, openModal, modalRef } = useModal();
   const scrollToTop = () => {
-    componentRef.current.scrollIntoView();
+    componentRef.current.scrollIntoView({
+      behavior: 'smooth',
+    
+    });
   };
 
   const handleCalculate = () => {
@@ -181,7 +184,7 @@ const Calculator = () => {
   
 
   return (
-    <div id={'calculator'} className={styles.calculator} ref={componentRef}>
+    <div  className={styles.calculator} ref={componentRef}>
       {!result ? (
         <>
           <div className={styles.title}>
