@@ -211,7 +211,7 @@ right: -20px;
     @media screen and (max-width: 1160px) {
         min-height: 170px;   
     }
-    @media screen and (max-width: 352px) {
+    @media screen and (max-width: 426px) {
         grid-template-columns:  1fr;
     
     }
@@ -237,6 +237,11 @@ right: -20px;
    .imageContainer {
   text-align: end;
   align-self: flex-end;
+  @media screen and (max-width: 426px) {
+    order:-1;
+
+}
+  
     .img {
     max-width: 100%;
     min-width: 50px;
