@@ -3,7 +3,7 @@ import { ButtonBlue, ButtonTransparentPhone} from '../UI/Buttons/Buttons';
 import Intro from '../../assets/images/Intro.svg'
 const Introduction = () => {
     return (
-        <section className={styles.introduction}>
+        <section id={'home'} className={styles.introduction}>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                

@@ -1,7 +1,7 @@
 export const MENU = [
     {
         name:'Главная',
-        link:'/'
+        link:'#home'
     },
     {
         name:'О нас',
