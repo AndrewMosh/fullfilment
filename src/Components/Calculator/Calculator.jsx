@@ -36,9 +36,14 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     if (height !== '' && width !== '' && lengthBox !== '' && itemsQuantity !== '' && logistics.some(item => item.applied === true)) {
-      setResult(!result);
-      setError({ params: false, logistics: false });
-      setMessage('');
+      if (height<=40 && width<=40 && lengthBox<=60 && itemsQuantity>0) {
+        setResult(!result);
+        setError({ params: false, logistics: false });
+        setMessage('');
+      }else {
+        setError({ params: true, logistics: false });
+        setMessage('Не более 60х40х40см');
+      }
     } else if (height === '' && width === '' && lengthBox === '' && itemsQuantity === '' && logistics.some(item => item.applied === true)) {
       setError({ params: true, logistics: false });
       setMessage('Вы не ввели данные');
@@ -113,8 +118,11 @@ const Calculator = () => {
   const handleHeight = (e) => {
     setHeight(+e.target.value);
     if (e.target.value > 40 ) {
+      setHeight('')
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
+    } else if (height===0) {
+      setHeight('')
     } else {
       setError({ params: false, logistics: false });
       setMessage('');
@@ -124,9 +132,12 @@ const Calculator = () => {
   const handleWidth = (e) => {
     setWidth(+e.target.value);
     if (e.target.value > 40) {
+      setWidth('')
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
-    } else {
+    } else if (width===0) {
+      setWidth('')
+    }else {
       setError({ params: false, logistics: false });
       setMessage('');
     }
@@ -135,8 +146,11 @@ const Calculator = () => {
   const handleLengthBox = (e) => {
     setLengthBox(+e.target.value);
     if (e.target.value > 60) {
+      setLengthBox('')
       setError({ params: true, logistics: false });
       setMessage('Не более 60х40х40см');
+    } else if (lengthBox===0) {
+      setLengthBox('')
     } else {
       setError({ params: false, logistics: false });
       setMessage('');
@@ -144,6 +158,9 @@ const Calculator = () => {
   };
   const handleQuantity = (e) => {
     setItemsQuantity(+e.target.value);
+    if (itemsQuantity===0) {
+      setItemsQuantity('')
+    }
 
   };
   const handleButtonClick = (e) => {
@@ -304,13 +321,13 @@ const Calculator = () => {
               </div>
             </div>
             <div className={styles.buttons}>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center',  }}>
                 {error.params || error.logistics ? (
                   <ButtonError onClick={handleCalculate}>Рассчитать стоимость</ButtonError>
                 ) : (
                   <ButtonBlueWithoutLink onClick={handleCalculate}>Рассчитать стоимость </ButtonBlueWithoutLink>
                 )}
-                <div style={{ textAlign: 'center', color: '#DB063B', lineHeight: '16px', marginTop: '8px' }}>{message}</div>
+                <div style={{ textAlign: 'center', color: '#DB063B', lineHeight: '16px', marginTop: '8px', height: '16px' }}>{message}</div>
               </div>
               <ButtonClear onClick={clearData}>Очистить данные</ButtonClear>
             </div>

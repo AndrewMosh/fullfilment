@@ -349,7 +349,6 @@ right: -20px;
     .question {
         margin-bottom: 16px;
         font-size: 20px;
-       
         line-height: 28px;
     }
     .answer {
@@ -357,9 +356,19 @@ right: -20px;
         line-height: 20px;
         color: #6F7A91;
         margin-bottom: 24px;
+        animation: fadein 0.3s ease;
+        @keyframes fadein {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
     }
     .arrow {
         text-align: right;
+      
         img {
             cursor: pointer;
         }
