@@ -237,10 +237,7 @@ right: -20px;
    .imageContainer {
   text-align: end;
   align-self: flex-end;
-  @media screen and (max-width: 426px) {
-    order:-1;
-
-}
+ 
   
     .img {
     max-width: 100%;
