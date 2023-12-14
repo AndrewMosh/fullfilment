@@ -242,7 +242,10 @@ right: -20px;
     .img {
     max-width: 100%;
     min-width: 50px;
-       
+    @media screen and (max-width: 426px) {
+       min-width: 80%;
+    
+    }   
       
 }
    }
