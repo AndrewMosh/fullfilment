@@ -10,6 +10,7 @@ import Map from './Components/Map/Map'
 import Faq from './Components/Faq/Faq'
 import Footer from './Components/Footer/Footer'
 import { useState } from 'react'
+import ErrorBoundaryWrapper from './Components/ErrorBoundary/ErrorBoundaryWrapper'
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,7 +18,7 @@ function App() {
     setIsOpen(!isOpen);
   };
   return (
-    <>
+    <ErrorBoundaryWrapper>
       <Header isOpen={isOpen} toggleMenu={toggleMenu} setIsOpen={setIsOpen} />
       <Introduction />
       <About/>
@@ -28,7 +29,7 @@ function App() {
        <Map/>
        <Faq/>
       <Footer />
-    </>
+    </ErrorBoundaryWrapper>
   )
 }
 

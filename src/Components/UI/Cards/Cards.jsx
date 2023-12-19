@@ -110,10 +110,10 @@ export const ResultCardWithLogistics=({title, place, info, price, weight})=>{
 }
 export const FaqCard = ({question, answer, collapsed, onClick}) => {
     return (
-        <div className={styles.faqCard}>
+        <div className={styles.faqCard} onClick={onClick}>
             <div className={styles.question}>{question}</div>
             {collapsed ? <div className={styles.answer}>{answer}</div> : ''}
-            <div className={styles.arrow}><img onClick={onClick} src={collapsed ? up : down} alt="arrow" /></div>
+            <div className={styles.arrow}><img  src={collapsed ? up : down} alt="arrow" /></div>
         </div>
     )
 }
