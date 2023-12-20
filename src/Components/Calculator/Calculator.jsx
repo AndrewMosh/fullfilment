@@ -21,7 +21,7 @@ const Calculator = () => {
   const [lengthBox, setLengthBox] = useState('');
   const [boxQuantity, setBoxQuantity] = useState('');
   const [total, setTotal] = useState('');
-
+const [focus, setFocus]=useState('')
   const [logistics, setLogistics] = useState(LOGISTICS);
   const [packages, setPackages] = useState(PACKAGE);
   const [error, setError] = useState({ params: false, logistics: false });
@@ -246,7 +246,7 @@ const Calculator = () => {
               </h2>
               <small>Укажите минимальные размеры единицы товара (ДхВхШ не более 60х40х40см)</small>
               <div className={styles.inputs}>
-                <div className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div className={styles.paramsContainer}  style={{transition:'all 0.4s ease', border: error.params ? '2px solid #DB063B' : focus==='length' ? '2px solid #0250EE':  '2px solid #D2D4D8' }}>
                   <div className={styles.box}> <div>Длина:</div>
                 <input
                   placeholder='60'
@@ -254,10 +254,12 @@ const Calculator = () => {
                   id='length'
                   value={lengthBox}
                   onChange={handleLengthBox}
+                  onFocus={() => setFocus('length')}
+                  onBlur={() => setFocus('')}
                 />
                 </div>
                 </div>
-                <div className={styles.paramsContainer} style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div className={styles.paramsContainer} style={{transition:'all 0.4s ease', border: error.params ? '2px solid #DB063B' : focus==='height' ? '2px solid #0250EE': '2px solid #D2D4D8' }}>
                 <div className={styles.box}> <div>Высота:</div>
                 <input
                   placeholder='40'
@@ -265,10 +267,12 @@ const Calculator = () => {
                   id='height'
                   value={height}
                   onChange={handleHeight}
+                  onFocus={() => setFocus('height')}
+                  onBlur={() => setFocus('')}
                 />
                 </div>
                 </div>
-                <div  className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div  className={styles.paramsContainer}  style={{transition:'all 0.4s ease', border: error.params ? '2px solid #DB063B' : focus==='width' ? '2px solid #0250EE':  '2px solid #D2D4D8' }}>
                 <div className={styles.box}> <div>Ширина:</div>
                 <input
                   placeholder='40'
@@ -276,10 +280,12 @@ const Calculator = () => {
                   id='width'
                   value={width}
                   onChange={handleWidth}
+                  onFocus={() => setFocus('width')}
+                  onBlur={() => setFocus('')}
                 />
                 </div>
                 </div>
-                <div className={styles.paramsContainer}  style={{ border: error.params ? '2px solid #DB063B' : '2px solid #D2D4D8' }}>
+                <div className={styles.paramsContainer}  style={{transition:'all 0.4s ease', border: error.params ? '2px solid #DB063B' :focus==='quantity' ? '2px solid #0250EE':  '2px solid #D2D4D8' }}>
                 <div className={styles.box}> <div>Количество:</div>
                 <input
                   placeholder={itemsQuantity===0 || itemsQuantity===''? '1000' : itemsQuantity}
@@ -288,6 +294,8 @@ const Calculator = () => {
                   id='quantity'
                   value={itemsQuantity}
                   onChange={handleQuantity}
+                  onFocus={() => setFocus('quantity')}
+                  onBlur={() => setFocus('')}
                 />
                 </div>
                 </div>
