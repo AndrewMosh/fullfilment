@@ -193,7 +193,7 @@ const Calculator = () => {
           <div className={styles.popup}>
             <div className={styles.popupOverlay} style={{display:isModalOpen ? 'block' : 'none'}}></div>
             <div
-              style={{transition:isModalOpen ? 'all 0.8s ease' : 'all 0.3s ease', border: isModalOpen ? '2px solid #0250EE' : error.logistics ? '2px solid #DB063B' : '2px solid #A9B0BE' }}
+              style={{transition:isModalOpen ? 'all 0.4s ease' : 'all 0.3s ease', border: isModalOpen ? '2px solid #0250EE' : error.logistics ? '2px solid #DB063B' : '2px solid #A9B0BE' }}
               className={styles.inputContainer}
              
               onClick={handleButtonClick}

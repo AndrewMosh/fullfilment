@@ -17,6 +17,8 @@ function App() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  
   return (
     <ErrorBoundaryWrapper>
       <Header isOpen={isOpen} toggleMenu={toggleMenu} setIsOpen={setIsOpen} />
