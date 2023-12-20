@@ -2,6 +2,15 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    animation: fadein 1s ease;
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
   h2 {
     margin-top: 0;
   }

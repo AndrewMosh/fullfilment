@@ -40,7 +40,15 @@
         left: 0;
         z-index: 1;
         border-radius: 24px;
-
+        animation: fadein 0.4s ease-in-out;
+        @keyframes fadein {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
     }
     .params {
         position: relative;
@@ -225,7 +233,7 @@ img {
     width: 100%;
     height: 60px;
     z-index: 5;
- 
+  cursor: pointer;
 }
         .checkboxes {
             position: absolute;
@@ -237,7 +245,7 @@ img {
            
             box-shadow: 0px 0.249px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.599px 1.5px 0px rgba(38, 39, 40, 0.04), 0px 1px 3px 0px rgba(38, 39, 40, 0.05), 0px 2px 5px 0px rgba(38, 39, 40, 0.06), 0px 4px 9px 0px rgba(38, 39, 40, 0.08), 0px 8px 20px 0px rgba(38, 39, 40, 0.10);
             // padding: 16px 24px;
-          animation: fadein 0.4s ease;
+          animation: fadein 0.5s ease-in-out;
           @keyframes fadein {
             from {
               opacity: 0;
