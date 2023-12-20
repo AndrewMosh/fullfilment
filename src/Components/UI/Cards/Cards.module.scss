@@ -362,7 +362,7 @@ right: -20px;
         line-height: 20px;
         color: #6F7A91;
         margin-bottom: 24px;
-        animation: fadein 0.3s ease;
+        animation: fadein 0.4s ease-in-out;
         @keyframes fadein {
           from {
             opacity: 0;
