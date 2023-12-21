@@ -4,6 +4,7 @@ import {ButtonRecalculate, ButtonTransparentDownload} from '../UI/Buttons/Button
 import info from '../../assets/icons/info.svg'
 import pack from '../../assets/icons/package.svg'
 import transfer from '../../assets/icons/logistics.svg'
+import pricelist from '../../assets/downloads/pricelist.jpeg'
 const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQuantity,boxQuantity,packages, logistics }) => {
     const multiplyBoxes =(quantity, obj, boxes, isBoxes)=> {
       if (isBoxes) {
@@ -93,7 +94,7 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     return (
 <div className={styles.result}>
     <div className={styles.titleContainer}><div className={styles.titleFlex}><div className={styles.title}>Примерная стоимость</div><div className={styles.price}>{formatPrice(total)}₽</div></div>
-    <ButtonTransparentDownload buttonText='Скачать прайс-лист'/>
+    <ButtonTransparentDownload buttonText='Скачать прайс-лист' download={pricelist} link={pricelist} />
     </div>
     <div>
     <div className={styles.subhead}><img src={info} alt="info" />
