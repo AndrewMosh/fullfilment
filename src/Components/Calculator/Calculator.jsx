@@ -301,7 +301,7 @@ const [focus, setFocus]=useState('')
                 </div>
               </div>
             </div>
-            <div className={styles.services}>
+            <div className={styles.services}> 
               <h2>Выберите дополнительные услуги</h2>
               <div className={styles.inputWrapper}>
                 {packages.map((item) => (
