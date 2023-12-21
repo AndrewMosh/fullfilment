@@ -8,6 +8,7 @@
     flex-direction: column;
     line-height: 28px;
     gap:40px;
+  
    
     @media screen and (max-width: 1348px) {
         order: 2;  
@@ -370,5 +371,18 @@ img {
           
             }   
         }
+    }
+}
+
+.animate {
+    animation: fadein 0.4s ease-in-out;
+    
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
 }

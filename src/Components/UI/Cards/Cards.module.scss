@@ -351,26 +351,20 @@ right: -20px;
     border-radius: 24px;
     box-shadow: 0px 0.3px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.8px 2px 0px rgba(38, 39, 40, 0.04), 0px 1.5px 3.5px 0px rgba(38, 39, 40, 0.05), 0px 3px 5px 0px rgba(38, 39, 40, 0.05), 0px 4px 16px 0px rgba(38, 39, 40, 0.06);
     padding: 32px;
+  
     cursor: pointer;
     .question {
         margin-bottom: 16px;
         font-size: 20px;
         line-height: 28px;
+        min-height: 100px;
     }
     .answer {
         font-size: 14px;
         line-height: 20px;
         color: #6F7A91;
         margin-bottom: 24px;
-        animation: fadein 0.4s ease-in-out;
-        @keyframes fadein {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
-        }
+      
     }
     .arrow {
         text-align: right;
@@ -380,4 +374,17 @@ right: -20px;
         }
     }
     
+}
+.animate {
+    animation: fadein 0.4s ease-in-out;
+    @keyframes fadein {
+      from {
+        opacity: 0;
+     
+      }
+      to {
+        opacity: 1;
+      
+      }
+    }
 }

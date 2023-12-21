@@ -112,7 +112,7 @@ export const FaqCard = ({question, answer, collapsed, onClick}) => {
     return (
         <div className={styles.faqCard} onClick={onClick}>
             <div className={styles.question}>{question}</div>
-            {collapsed ? <div className={styles.answer}>{answer}</div> : ''}
+            {collapsed ? <div className={collapsed?styles.answer+' ' + styles.animate:styles.answer}>{answer}</div> : ''}
             <div className={styles.arrow}><img  src={collapsed ? up : down} alt="arrow" /></div>
         </div>
     )

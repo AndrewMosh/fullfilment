@@ -172,7 +172,6 @@ const [focus, setFocus]=useState('')
 
   };
 
-
   useEffect(() => {
     if (height !== '' && width !== '' && lengthBox !== '' && !error.params && itemsQuantity !== '') {
       setBoxQuantity(() =>
@@ -183,7 +182,7 @@ const [focus, setFocus]=useState('')
   
 
   return (
-    <div  className={styles.calculator} ref={componentRef}>
+    <div  className={ !result ? styles.calculator+' '+styles.animate : styles.calculator} ref={componentRef}>
       {!result ? (
         <>
           <div className={styles.title}>
