@@ -351,7 +351,7 @@ right: -20px;
     border-radius: 24px;
     box-shadow: 0px 0.3px 1px 0px rgba(38, 39, 40, 0.03), 0px 0.8px 2px 0px rgba(38, 39, 40, 0.04), 0px 1.5px 3.5px 0px rgba(38, 39, 40, 0.05), 0px 3px 5px 0px rgba(38, 39, 40, 0.05), 0px 4px 16px 0px rgba(38, 39, 40, 0.06);
     padding: 32px;
- 
+   
     cursor: pointer;
     
     .question {
@@ -365,7 +365,7 @@ right: -20px;
         font-size: 14px;
         line-height: 20px;
         color: #6F7A91;
-      
+      overflow: hidden;
     }
     .arrow {
         text-align: right;
@@ -378,37 +378,36 @@ right: -20px;
 }
 
 .animate {
-
     animation: fadein1 0.5s ease-in-out forwards;
 
+   
     @keyframes fadein1 {
       from {
         opacity: 0;
 padding-bottom: 0;
-       
       }
       to {
         opacity: 1;
 padding-bottom: 24px;
+
       }
     }
  
-
 }
 .disappear {
     animation: fadeout 0.5s ease-in-out forwards;
     height: 0;
+    
     @keyframes fadeout {
       from {
         opacity: 0.2;
        padding-bottom: 24px;
-   
-
       }
       to {
         opacity: 0;
  padding-bottom: 0;
 height: 0;
+
       }
     }
 }
