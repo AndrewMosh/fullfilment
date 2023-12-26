@@ -15,7 +15,7 @@ const Contacts = () => {
                 <div className={styles.buttons}>
                     {/* Используйте кнопки соцсетей для обеспечения доступа к контактам */}
                     <ButtonBlueSocials link={'https://t.me/turist_hub'} text='Telegram' img={tg} />
-                    <ButtonBlueSocials link={'https://wa.me/'} text='WhatsApp' img={wa} />
+                    <ButtonBlueSocials link={'https://wa.me/79778641417'} text='WhatsApp' img={wa} />
                 </div>
 
             </div>
