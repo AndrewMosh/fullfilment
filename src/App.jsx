@@ -17,7 +17,6 @@ function App() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   
   return (
     <ErrorBoundaryWrapper>
