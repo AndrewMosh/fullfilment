@@ -97,8 +97,8 @@ const CalculationResult = ({handleRecalculate, width, height, lengthBox, itemsQu
     <ButtonTransparentDownload buttonText='Скачать прайс-лист' download={pricelist} link={pricelist} />
     </div>
     <div>
-    <div className={styles.subhead}><img src={info} alt="info" />
-    <h2>Информация о товаре</h2></div>
+    <div className={styles.subhead}><div style={{display:'flex', alignItems:'center'}}><img src={info} alt="info" />
+    <h2>Информация о товаре</h2></div></div>
     <div className={styles.info} >
 <ResultCard title='Габариты' perUnit='(ДхВхШсм):' value={`${lengthBox}x${height}x${width}`}/>
 <ResultCard title='Количество' perUnit='(шт):' value={formatPrice(itemsQuantity)}/>
