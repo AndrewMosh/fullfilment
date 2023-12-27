@@ -2,8 +2,8 @@ export const LOGISTICS = [
     {
         id:1,
         name:'Wildberries',
-        place:'г.Коледино, Троицкая улица, 20',
-        price: 320,
+        place:'Чехов',
+        price: 430,
         per:'за 1 коробку',
         applied:false,
        
@@ -11,62 +11,89 @@ export const LOGISTICS = [
     {   
         id:2,
         name:'Wildberries',
-        place:'г.Электросталь, территория Массив 3, пос. Случайный',
+        place:'Электросталь',
         price: 430,
         per:'за 1 коробку',
         applied:false,
 
       
     },
-    // {
-    //     id:3,
-    //     name:'Wildberries',
-    //     place:'г. Подольск, ул. Поливановская, д.9',
-    //     price: 320,
-    //     per:'за 1 коробку',
-    //     applied:false,
-      
-    // },
     {
         id:3,
-        name:'OZON',
-        place:'​Московская область, д. Хоругвино, 32/2',
+        name:'Wildberries',
+        place:'Подольск',
         price: 430,
         per:'за 1 коробку',
         applied:false,
-    
+      
     },
     {
         id:4,
+        name:'Wildberries',
+        place:'Домодедово',
+        price: 340,
+        per:'за 1 коробку',
+        applied:false,
+      
+    },
+    {
+        id:5,
+        name:'Wildberries',
+        place:'Пушкино',
+        price: 430,
+        per:'за 1 коробку',
+        applied:false,
+      
+    },
+    {
+        id:6,
+        name:'Wildberries',
+        place:'Вешки',
+        price: 430,
+        per:'за 1 коробку',
+        applied:false,
+      
+    },
+    {
+        id:7,
         name:'OZON',
-        place:'г. Пушкино, Ярославское шоссе, д. 216, 32/2',
+        place:'Хоругвино',
         price: 430,
         per:'за 1 коробку',
         applied:false,
     
     },
     {
-        id:5,
+        id:8,
         name:'OZON',
-        place:'г. Жуковский, д. 457, стр. 5 ',
+        place:'Пушкино',
+        price: 430,
+        per:'за 1 коробку',
+        applied:false,
+    
+    },
+    {
+        id:9,
+        name:'OZON',
+        place:'Жуковский',
         price: 320,
         per:'за 1 коробку',
         applied:false,
     
     },
     {
-        id:6,
+        id:10,
         name:'OZON',
-        place:'с. Петровское, территория МПСК Ориентир-Запад, зд. 1А.',
+        place:'Петровское',
         price: 430,
         per:'за 1 коробку',
         applied:false,
     
     },
     {
-        id:7,
+        id:11,
         name:'OZON',
-        place:'с. Павловская Слобода, территория квартала 0050343, зд. 2',
+        place:'Павловская Слобода',
         price: 430,
         per:'за 1 коробку',
         applied:false,

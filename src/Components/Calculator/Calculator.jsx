@@ -207,12 +207,12 @@ const [focus, setFocus]=useState('')
               <div className={styles.checkboxes} ref={modalRef}>
                 <div className={styles.checkboxWrapper}>
                   {logistics.map((item) => (
-                    <div key={item.place} className={styles.address}>
+                    <div key={item.id} className={styles.address}>
                       <div className={styles.checkboxContainer}>
                         <div className={styles.inputCenter}>
                           <input
                             className={styles.customCheckbox}
-                            id={item.place}
+                            id={item.id}
                             type='checkbox'
                             data-price={item.price}
                             value={item.name}
@@ -222,7 +222,7 @@ const [focus, setFocus]=useState('')
                               handleAddAddress(e, item.place);
                             }}
                           />
-                          <label htmlFor={item.place} className={styles.name}>
+                          <label htmlFor={item.id} className={styles.name}>
                             {item.name}
                           </label>
                         </div>

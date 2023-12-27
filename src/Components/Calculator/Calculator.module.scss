@@ -23,6 +23,43 @@
        }
     .checkboxes {
         z-index: 2;
+        position: relative;
+        &:after {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(
+              rgba(255, 255, 255, 0) 0%,
+              rgb(255, 255, 255) 40%,
+              rgb(255, 255, 255) 100%
+            );
+            content: "";
+            bottom: 0px;
+            height: 40px;
+            position: absolute;
+            transition: all 0.2s ease 0s;
+            width: 95%;
+            left: 20px;
+            @media screen and (max-width: 609px) {
+              height:23px ;
+            }
+          }
+          &:before {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0) 0%,
+              rgba(255, 255, 255, 1) 40%,
+              rgba(255, 255, 255, 1) 100%
+            );
+            content: "";
+            height: 45px;
+            position: absolute;
+            transition: all 0.2s ease 0s;
+            width: 95%;
+            left: 20px;
+            @media screen and (max-width: 609px) {
+                height:23px ;
+              }
+          }
     }
 .servicesContainer {
     .weight {
@@ -258,13 +295,24 @@ img {
             .checkboxWrapper {
                 display: flex;
                 flex-direction: column;
-                padding: 16px 8px; 
-                gap: 16px;
-                padding: 32px 24px;
                 
+                gap: 16px;
+                margin: 32px 0;
+                padding:0 24px ;
+                max-height: 395px;
+        overflow-y:scroll;
+        &::-webkit-scrollbar {
+            width: 5px;               /* ширина всей полосы прокрутки */
+          }
+          &::-webkit-scrollbar-thumb {
+            top:30px;
+            background-color: blue;    /* цвет бегунка */
+            border-radius: 20px;       /* округлось бегунка */
+          }
                 @media screen and (max-width: 609px) {
-                    padding: 16px 16px;
-                    
+                  
+                    margin: 16px 0;
+                    padding:0 16px ;
                 }
                 .address {
                     display: flex;
@@ -303,7 +351,7 @@ img {
                 }
                 .price {
                     font-size: 20px;
-               
+               text-align: right;
                     white-space: nowrap;
                     line-height: 21px;
                     @media screen and (max-width: 609px) {
