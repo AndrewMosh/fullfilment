@@ -301,14 +301,17 @@ img {
             .checkboxWrapper {
                 display: flex;
                 flex-direction: column;
-                
                 gap: 16px;
-                margin: 32px 8px;
-                padding:0 16px ;
+                margin: 32px 6px;
+                padding:0 18px ;
                 max-height: 395px;
         overflow-y:scroll;
         &::-webkit-scrollbar {
             width: 5px;               /* ширина всей полосы прокрутки */
+            @media screen and (max-width: 609px) {
+                  
+                width:3px
+            }
           }
           &::-webkit-scrollbar-thumb {
             top:30px;
