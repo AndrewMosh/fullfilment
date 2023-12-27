@@ -32,14 +32,17 @@
               rgb(255, 255, 255) 100%
             );
             content: "";
-            bottom: 0px;
-            height: 40px;
+            bottom: 5px;
+            height: 37px;
             position: absolute;
             transition: all 0.2s ease 0s;
-            width: 95%;
-            left: 20px;
+            width: 97%;
+            border-radius: 24px;
+            left: 5px;
+
             @media screen and (max-width: 609px) {
-              height:23px ;
+              height:19px;
+             
             }
           }
           &:before {
@@ -51,13 +54,16 @@
               rgba(255, 255, 255, 1) 100%
             );
             content: "";
-            height: 45px;
+            height: 39px;
             position: absolute;
             transition: all 0.2s ease 0s;
-            width: 95%;
-            left: 20px;
+            width: 97%;
+           border-radius: 24px;
+            top:5px;
+            left: 5px;
             @media screen and (max-width: 609px) {
-                height:23px ;
+                height:19px;
+            
               }
           }
     }
@@ -297,8 +303,8 @@ img {
                 flex-direction: column;
                 
                 gap: 16px;
-                margin: 32px 0;
-                padding:0 24px ;
+                margin: 32px 8px;
+                padding:0 16px ;
                 max-height: 395px;
         overflow-y:scroll;
         &::-webkit-scrollbar {
@@ -306,13 +312,13 @@ img {
           }
           &::-webkit-scrollbar-thumb {
             top:30px;
-            background-color: blue;    /* цвет бегунка */
+            background-color: #080A0F1A;    /* цвет бегунка */
             border-radius: 20px;       /* округлось бегунка */
           }
                 @media screen and (max-width: 609px) {
                   
-                    margin: 16px 0;
-                    padding:0 16px ;
+                    margin: 16px 4px;
+                    padding:0 12px ;
                 }
                 .address {
                     display: flex;
