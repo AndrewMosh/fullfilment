@@ -58,16 +58,16 @@ export const PACKAGE = [
         applied:false,
      
     },
-    {
-        id:10,
-        name:'Нужны доп. вложения',
-        to1000:6,
-        from1001:6,
-        from2001:6,
-        all:true,
-        applied:false,
+    // {
+    //     id:10,
+    //     name:'Нужны доп. вложения',
+    //     to1000:6,
+    //     from1001:6,
+    //     from2001:6,
+    //     all:true,
+    //     applied:false,
         
-    },
+    // },
     // {
     //     id:11,
     //     name:'Контент съемка товара',
