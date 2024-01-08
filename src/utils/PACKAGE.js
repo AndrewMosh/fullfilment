@@ -96,8 +96,7 @@ export const PACKAGE = [
         from1001:6,
         from2001:5,
         all:true,
-        applied:true,
-        default:true,
+        applied:false,
         once:false
     },
     {
