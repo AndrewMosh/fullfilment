@@ -1,114 +1,103 @@
 .btn {
-display: flex;
-padding: 16px 32px;
-text-align: center;
-border-radius: 40px;
-display: flex;
-align-items: center;
-white-space: nowrap;
-gap:9px;
-align-self: baseline;
-transition: all 0.4s ease-in-out;
+    display: flex;
+    padding: 16px 32px;
+    text-align: center;
+    border-radius: 40px;
+    align-items: center;
+    white-space: nowrap;
+    gap: 9px;
+    align-self: baseline;
+    transition: all 0.4s ease-in-out;
 
-@media screen and (max-width: 463px) {
-    padding: 16px 16px;
-    font-size: 14px;
-   }
-a {
-    text-decoration: none;
-}
+    @media screen and (max-width: 463px) {
+        padding: 16px 16px;
+        font-size: 14px;
+    }
+    a {
+        text-decoration: none;
+    }
 }
 .withMin {
-min-width: 100px;
+    min-width: 100px;
 }
 .blue {
-
-@media screen and (max-width: 1100px) {
-   align-self: flex-end;
-  }
-  @media screen and (max-width: 598px) {
-   order:1
-  }
-    color: #FFFFFF;
-    a {
-        color: #FFFFFF;
-       
+    @media screen and (max-width: 1100px) {
+        align-self: flex-end;
     }
-    background-color: #0250EE;
-   
+    @media screen and (max-width: 598px) {
+        order: 1;
+    }
+    color: #ffffff;
+    a {
+        color: #ffffff;
+    }
+    background-color: #0250ee;
+
     &:hover {
-        background-color: #206EFF;
+        background-color: #206eff;
     }
     &:active {
-        background-color: #0240BE;
+        background-color: #0240be;
     }
 }
 .transparent {
     background-color: transparent;
-    border: 1px solid #0250EE;
+    border: 1px solid #0250ee;
     &:hover {
-        border: 1px solid #206EFF;  
+        border: 1px solid #206eff;
     }
     &:active {
-        border: 1px solid #0240BE;   
+        border: 1px solid #0240be;
     }
     a {
-    color: #0250EE;
+        color: #0250ee;
         &:hover {
-            color: #206EFF;
-            
-         }
-         &:active {
-             color: #0240BE;
-          
-         }
+            color: #206eff;
+        }
+        &:active {
+            color: #0240be;
+        }
     }
-   
-
 }
 .transparentDownload {
     @media screen and (max-width: 656px) {
-        order:-1;
-       width:100%;
-       justify-content: center;       
+        order: -1;
+        width: 100%;
+        justify-content: center;
     }
- 
 }
 .empty {
-
     background-color: transparent;
     a {
         text-decoration: none;
-        color: #0250EE;
+        color: #0250ee;
         transition: all 0.4s ease-in-out;
         &:hover {
-            color: #206EFF; 
-         }
-         &:active {
-             color: #0240BE; 
-         }
+            color: #206eff;
+        }
+        &:active {
+            color: #0240be;
+        }
     }
- 
-
 }
 .clear {
     background-color: transparent;
-    color: #0250EE;
+    color: #0250ee;
     white-space: nowrap;
     &:hover {
-        color: #206EFF; 
-     }
-     &:active {
-         color: #0240BE; 
-     }  
+        color: #206eff;
+    }
+    &:active {
+        color: #0240be;
+    }
 }
 .error {
-        color: #FFFFFF;
-    background-color: #DB063B;
+    color: #ffffff;
+    background-color: #db063b;
     display: flex;
     align-items: center;
     gap: 8px;
-   
+
     &:hover {
         background-color: #db063bd5;
     }
@@ -117,25 +106,23 @@ min-width: 100px;
     }
 }
 .recalculate {
-   color:white;
-   align-self: flex-start;
+    color: white;
+    align-self: flex-start;
     a {
-      text-decoration: none;  
-     
+        text-decoration: none;
     }
 }
 .socials {
-   display: flex;
-   justify-content: center;
-//    min-width: 150px;
- a {
     display: flex;
-    gap: 10px;
-    align-items: center;
-    @media screen and (max-width: 463px) {
-        gap: 5px;
-        font-size: 14px;
+    justify-content: center;
+    //    min-width: 150px;
+    a {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        @media screen and (max-width: 463px) {
+            gap: 5px;
+            font-size: 14px;
+        }
     }
-  
- }
 }

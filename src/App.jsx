@@ -12,26 +12,26 @@ import Footer from './Components/Footer/Footer'
 import { useState } from 'react'
 import ErrorBoundaryWrapper from './Components/ErrorBoundary/ErrorBoundaryWrapper'
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-  
-  return (
-    <ErrorBoundaryWrapper>
-      <Header isOpen={isOpen} toggleMenu={toggleMenu} setIsOpen={setIsOpen} />
-      <Introduction />
-      <About/>
-      <Advantages/>
-      <Proccesses/>
-     <Fbo/>
-      <CalculatorSection/>
-       <Map/>
-       <Faq/>
-      <Footer />
-    </ErrorBoundaryWrapper>
-  )
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    return (
+        <ErrorBoundaryWrapper>
+            <Header isOpen={isOpen} toggleMenu={toggleMenu} setIsOpen={setIsOpen} />
+            <Introduction />
+            <About />
+            <Advantages />
+            <Proccesses />
+            <Fbo />
+            <CalculatorSection />
+            <Map />
+            <Faq />
+            <Footer />
+        </ErrorBoundaryWrapper>
+    )
 }
 
 export default App

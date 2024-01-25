@@ -2,22 +2,19 @@
     position: relative;
     display: flex;
     justify-content: center;
-  
-  }
-  @media screen and (min-width: 857px) {
+}
+@media screen and (min-width: 857px) {
     .burgerMenu {
-      display: none;
+        display: none;
     }
-  }
-  .burger {
+}
+.burger {
     z-index: 1000;
     right: 20px;
     cursor: pointer;
-   
-  }
-  
+}
 
-  .menu {
+.menu {
     width: 100vw;
     position: fixed;
     top: 0;
@@ -33,46 +30,45 @@
     font-size: 20px;
     animation: fadein 0.3s ease-in-out;
     @keyframes fadein {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
-  }
-  @media screen and (max-width: 350px) {
+}
+@media screen and (max-width: 350px) {
     .menu {
-      width: 110vw;
+        width: 110vw;
     }
-  }
-  
-  .menuList {
+}
+
+.menuList {
     list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-  }
-  .menuLink {
+}
+.menuLink {
     text-decoration-thickness: 1px;
     text-underline-offset: 4px;
-  }
-  
-  li {
+}
+
+li {
     margin: 10px 0;
     cursor: pointer;
     font-size: 17px;
-  }
-  li a {
+}
+li a {
     transition: all 0.4s ease-in-out;
     color: black;
     text-decoration: none;
-  }
-  li a:hover {
+}
+li a:hover {
     color: #a5a5a5;
-  }
-  li a:active {
+}
+li a:active {
     color: #d28d0c;
-  }
+}

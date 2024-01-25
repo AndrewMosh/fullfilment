@@ -11,7 +11,7 @@ const Header = ({ isOpen, toggleMenu, setIsOpen }) => {
             <div className={styles.container}>
                 <div className={styles.wrapper}>
                     <div className={styles.logo}>
-                      
+
                         <a href="/">
                             <img src={Logo} alt="FullX" />
                         </a>
@@ -26,10 +26,10 @@ const Header = ({ isOpen, toggleMenu, setIsOpen }) => {
                         </ul>
                     </nav>
                     <div className={styles.buttons}>
-                      
+
                         <ButtonBlue link='#calculator' text='Узнать стоимость' />
-                        <ButtonEmptyPhone>+7 (977) 864-14-17</ButtonEmptyPhone>
-                    
+                        <ButtonEmptyPhone>+7 (991) 753-74-47</ButtonEmptyPhone>
+
                         <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} setIsOpen={setIsOpen} />
                     </div>
                 </div>

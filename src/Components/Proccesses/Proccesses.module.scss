@@ -2,8 +2,8 @@
     background-color: rgba(8, 10, 15, 0.05);
     border-radius: 40px;
     width: 100%;
-  position: relative;
-  box-shadow: 0px 1px 2px 1px rgba(38, 39, 40, 0.20) inset;
+    position: relative;
+    box-shadow: 0px 1px 2px 1px rgba(38, 39, 40, 0.2) inset;
     .container {
         max-width: 1440px;
         margin: 0 auto;
@@ -13,18 +13,18 @@
             flex-direction: column;
             gap: 40px;
             @media screen and (max-width: 1209px) {
-              padding: 100px 40px 60px 40px;
+                padding: 100px 40px 60px 40px;
             }
-           
+
             @media screen and (max-width: 825px) {
-              padding: 45px 20px 0 20px; 
-              gap:30px;
+                padding: 45px 20px 0 20px;
+                gap: 30px;
             }
-          
+
             @media screen and (max-width: 430px) {
-             padding: 40px 16px 0 16px;
-             gap: 20px;
+                padding: 40px 16px 0 16px;
+                gap: 20px;
+            }
         }
-      }
     }
 }

@@ -1,30 +1,30 @@
 export const MENU = [
     {
-        name:'Главная',
-        link:'#home'
+        name: "Главная",
+        link: "#home",
     },
     {
-        name:'О нас',
-        link:'#about'
+        name: "О нас",
+        link: "#about",
     },
     {
-        name:'Преимущества',
-        link:'#advantages'
+        name: "Преимущества",
+        link: "#advantages",
     },
     {
-        name:'Процесс работы',
-        link:'#proccess'
+        name: "Процесс работы",
+        link: "#proccess",
     },
     {
-        name:'FBO/FBS',
-        link:'#fbo'
+        name: "FBO/FBS",
+        link: "#fbo",
     },
     {
-        name:'Наш адрес',
-        link:'#address'
+        name: "Наш адрес",
+        link: "#address",
     },
     {
-        name:'FAQ',
-        link:'#faq'
+        name: "FAQ",
+        link: "#faq",
     },
-]
+];

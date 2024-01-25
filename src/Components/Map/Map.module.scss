@@ -1,13 +1,12 @@
 .map {
     padding: 128px 0 64px 0;
     @media screen and (max-width: 825px) {
-        padding: 160px 0 64px 0; 
-      }
+        padding: 160px 0 64px 0;
+    }
 
-      @media screen and (max-width: 430px) {
-       padding: 96px 0 32px 0;
-    
-      }
+    @media screen and (max-width: 430px) {
+        padding: 96px 0 32px 0;
+    }
 
     .title {
         text-align: center;
@@ -22,13 +21,12 @@
             border-radius: 40px;
             box-shadow: 0px 0px 30.6px 0px rgba(38, 38, 39, 0.2) inset;
             z-index: 90;
-            @media screen and (max-width:900px) {
-                height: 400px;   
-               }
-            @media screen and (max-width:500px) {
-             height: 300px;   
+            @media screen and (max-width: 900px) {
+                height: 400px;
+            }
+            @media screen and (max-width: 500px) {
+                height: 300px;
             }
         }
     }
-
 }

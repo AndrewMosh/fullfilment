@@ -7,29 +7,29 @@ import ellipse from '../../assets/images/Ellipse.png';
 
 // Создадим компонент для отображения карточек
 const renderCards = (aboutData) => (
-  <div className={styles.cards}>
-    {aboutData.map((item) => (
-      !item.tall && <ShortCard key={item.title} title={item.title} text={item.text} img={item.pic} />
-    ))}
-  </div>
+    <div className={styles.cards}>
+        {aboutData.map((item) => (
+            !item.tall && <ShortCard key={item.title} title={item.title} text={item.text} img={item.pic} />
+        ))}
+    </div>
 );
 
 const About = () => {
-  return (
-    <section id="about" className={styles.about}>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          {/* Отрисовка карточек с высокими блоками */}
-          {ABOUT.filter((item) => item.tall).map((item) => (
-            <TallCard key={item.title} title={item.title} text={item.text} img1={RuslanAbout} img2={ellipse} />
-          ))}
+    return (
+        <section id="about" className={styles.about}>
+            <div className={styles.container}>
+                <div className={styles.wrapper}>
+                    {/* Отрисовка карточек с высокими блоками */}
+                    {ABOUT.filter((item) => item.tall).map((item) => (
+                        <TallCard key={item.title} title={item.title} text={item.text} img1={RuslanAbout} img2={ellipse} />
+                    ))}
 
-          {/* Отрисовка карточек с низкими блоками */}
-          {renderCards(ABOUT)}
-        </div>
-      </div>
-    </section>
-  );
+                    {/* Отрисовка карточек с низкими блоками */}
+                    {renderCards(ABOUT)}
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default About;

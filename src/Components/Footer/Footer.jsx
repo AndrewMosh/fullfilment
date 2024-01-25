@@ -15,7 +15,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className={styles.copyright}>
-                        ©Copyright {new Date().getFullYear()} 
+                        ©Copyright {new Date().getFullYear()}
                     </div>
                     <a href='https://taplink.cc/m_links' target='_blank' rel='noopener noreferrer'>
                         Написать дизайнеру
